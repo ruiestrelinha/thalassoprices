@@ -1,0 +1,5 @@
+# Ignore folders
+.vscode/
+assets/img/
+assets/vendor/
+pdf/
