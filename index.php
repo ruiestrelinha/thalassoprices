@@ -606,6 +606,12 @@
         <p><a href="https://www.thalassonazare.com" target="_blank" rel="noopener">www.thalassonazare.com</a></p>
     </footer> <!-- ======= end Footer Section ======= -->
 
+    <button class="back-to-top" type="button" aria-label="Voltar ao topo" title="Voltar ao topo">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="m6 14 6-6 6 6"></path>
+        </svg>
+    </button>
+
     <!-- JS VENDOR -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 
