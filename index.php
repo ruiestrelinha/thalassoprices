@@ -20,7 +20,21 @@
     <!-- ======= Header Section ======= -->
     <header id="header">
 
-        <div class="container text-center">
+        <div class="container text-center header-content">
+            <div class="dropdown language-selector">
+                <button class="language-selector__button" type="button" id="language-selector" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Selecionar idioma">
+                    <svg class="language-selector__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <circle cx="12" cy="12" r="8.5"></circle>
+                        <path d="M3.5 12h17M12 3.5c2.25 2.32 3.5 5.25 3.5 8.5S14.25 18.18 12 20.5c-2.25-2.32-3.5-5.25-3.5-8.5S9.75 5.82 12 3.5Z"></path>
+                    </svg>
+                    <span class="language-selector__current">PT</span>
+                    <span class="language-selector__chevron" aria-hidden="true"></span>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end language-selector__menu" aria-labelledby="language-selector">
+                    <li><button class="dropdown-item active" type="button" data-language="pt" lang="pt" aria-current="true">PT <span>Português</span></button></li>
+                    <li><button class="dropdown-item" type="button" data-language="en" lang="en">EN <span>English</span></button></li>
+                </ul>
+            </div>
             <div id="logo">
                 <img src="assets/images/thalasso_logo.png" alt="Thalasso Nazaré - A cura que vem do mar." class="img-fluid">
             </div>
