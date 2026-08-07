@@ -1,0 +1,302 @@
+/*--------------------------------------------------------------------------------
+ # General
+ --------------------------------------------------------------------------------*/
+:root {
+  --thalasso-green: #4f7d2a;
+  --thalasso-gray-dark: #2e2e2e;
+  --thalasso-gray-mid: #4a4a4a;
+  --thalasso-gray-light: #666666;
+  --thalasso-gray-band: #5a5a5a;
+  --thalasso-line: #b8b8b8;
+}
+
+body {
+  background: #ffffff;
+  color: var(--thalasso-gray-dark);
+  font-family: "Quicksand", sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+/*--------------------------------------------------------------------------------
+ # Header Section
+ --------------------------------------------------------------------------------*/
+#header {
+  padding: 2rem 0.75rem 1rem;
+}
+
+#header #logo {
+  max-width: 220px;
+  width: 100%;
+  display: inline-block;
+}
+
+/*--------------------------------------------------------------------------------
+ # Main Section
+ --------------------------------------------------------------------------------*/
+.page-title {
+  color: var(--thalasso-gray-mid);
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin: 1.5rem 0 1.25rem;
+  text-align: center;
+}
+
+/*--------------------------------------------------------------------------------
+ # Price Toggle
+ --------------------------------------------------------------------------------*/
+.toggle-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.75rem;
+}
+
+.price-toggle {
+  background: #ffffff;
+  border: 1px solid var(--thalasso-gray-light);
+  border-radius: 999px;
+  display: inline-flex;
+  overflow: hidden;
+}
+
+.price-toggle button {
+  background: transparent;
+  border: 0;
+  border-radius: 999px;
+  color: var(--thalasso-gray-mid);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.7rem 1.4rem;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.price-toggle button.active {
+  background-color: var(--thalasso-green);
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.price-toggle button:focus-visible {
+  outline: 3px solid #1f4a0c;
+  outline-offset: 2px;
+}
+
+/*--------------------------------------------------------------------------------
+ # Price Table
+ --------------------------------------------------------------------------------*/
+.price-panel {
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+.price-tax-note {
+  color: var(--thalasso-gray-light);
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+  text-align: center;
+}
+
+.price-row {
+  align-items: start;
+  border-top: 1px solid var(--thalasso-line);
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: minmax(0, 1fr) auto;
+  padding: 1rem 0;
+}
+
+.price-row:last-of-type {
+  border-bottom: 1px solid var(--thalasso-line);
+}
+
+.item-name {
+  color: var(--thalasso-gray-mid);
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.35;
+  margin-bottom: 0.2rem;
+}
+
+.item-duration {
+  color: var(--thalasso-gray-light);
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.item-duration span {
+  font-size: 1.25rem;
+  line-height: 1;
+  vertical-align: -0.05em;
+}
+
+.item-desc {
+  color: var(--thalasso-gray-light);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.item-price {
+  color: var(--thalasso-gray-mid);
+  font-size: 1.35rem;
+  font-weight: 600;
+  padding-top: 0;
+  white-space: nowrap;
+  max-width: 750px;
+}
+
+.section-band {
+  background-color: var(--thalasso-gray-band);
+  color: #ffffff;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  margin-top: 0.5rem;
+  padding: 0.85rem 1rem;
+}
+
+.section-band span {
+  display: block;
+  font-size: 0.9em;
+  font-weight: 500;
+  margin-top: 0.2rem;
+}
+
+.section-desc {
+  color: var(--thalasso-gray-light);
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
+
+/*--------------------------------------------------------------------------------
+ # Footer Section
+ --------------------------------------------------------------------------------*/
+#footer {
+  background-color: var(--thalasso-gray-band);
+  color: #ffffff;
+  margin-top: 2rem;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+#footer p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 0.6rem;
+}
+
+#footer p:last-child {
+  margin-bottom: 0;
+}
+
+#footer a {
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+#footer a:hover {
+  text-decoration: underline;
+}
+
+/*--------------------------------------------------------------------------------
+ # Responsive - Tablet and larger screens
+ --------------------------------------------------------------------------------*/
+@media (min-width: 768px) {
+  #header {
+    padding: 2.5rem 1rem 1.25rem;
+  }
+
+  #header #logo {
+    max-width: 250px;
+  }
+
+  .page-title {
+    font-size: 1.8rem;
+    margin: 1.75rem 0 1.5rem;
+  }
+
+  .price-toggle button {
+    font-size: 1.05rem;
+    padding: 0.7rem 2rem;
+  }
+
+  .item-name {
+    font-size: 1.3rem;
+  }
+
+  .item-duration {
+    font-size: 1rem;
+  }
+
+  .item-price {
+    font-size: 1.45rem;
+  }
+
+  .section-band span {
+    display: inline;
+    float: right;
+    margin-top: 0;
+  }
+
+  .price-tax-note {
+    text-align: right;
+  }
+}
+
+/*--------------------------------------------------------------------------------
+ # Responsive - Desktop screens
+ --------------------------------------------------------------------------------*/
+@media (min-width: 992px) {
+  #header {
+    padding: 3rem 1rem 1.5rem;
+  }
+
+  .page-title {
+    font-size: 2rem;
+    margin: 2rem 0 1.5rem;
+  }
+
+  .toggle-wrap {
+    margin-bottom: 2.5rem;
+  }
+
+  .price-toggle button {
+    font-size: 1.15rem;
+    padding: 0.75rem 2.5rem;
+  }
+
+  .price-row {
+    align-items: center;
+    gap: 1rem;
+    padding: 1.1rem 0;
+  }
+
+  .item-name {
+    font-size: 1.4rem;
+  }
+
+  .item-price {
+    font-size: 1.6rem;
+  }
+
+  .section-band {
+    font-size: 1.15rem;
+  }
+
+  #footer {
+    margin-top: 3rem;
+    padding: 2.5rem 1rem;
+  }
+
+  .price-tax-note {
+    text-align: right;
+  }
+}
+
+[hidden] {
+  display: none !important;
+}
