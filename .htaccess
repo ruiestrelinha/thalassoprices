@@ -1,0 +1,11 @@
+# =====================================================================
+# Clean multilingual URLs
+#   /      -> default language (pt)
+#   /en/   -> English
+# Requires mod_rewrite (standard on Apache shared hosting).
+# =====================================================================
+RewriteEngine On
+
+# Map /en/ (and /en) to index.php with lang=en.
+# index.php reads ?lang= and renders the English version.
+RewriteRule ^en/?$ index.php?lang=en [L,QSA]

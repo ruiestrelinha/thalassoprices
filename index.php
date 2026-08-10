@@ -1,9 +1,206 @@
+<?php
+
+declare(strict_types=1);
+
+/* =====================================================================
+ * Language selection
+ * Priority: ?lang= > cookie > default (pt)
+ * ===================================================================== */
+$supportedLangs = ['pt', 'en'];
+$defaultLang = 'pt';
+
+/* URL structure: "/" serves the default language (pt), "/en/" serves English.
+ * The /en/ rewrite (see .htaccess) sets ?lang=en; direct ?lang= requests also
+ * keep working as a fallback. No cookies needed — the language is in the URL. */
+$lang = $_GET['lang'] ?? $defaultLang;
+
+if (!in_array($lang, $supportedLangs, true)) {
+    $lang = $defaultLang;
+}
+
+$t = require __DIR__ . '/lang/' . $lang . '.php';
+
+/* App path prefix: "" at the domain root, e.g. "/app" inside a subfolder.
+ * Used for the <base> tag and clean per-language URLs.
+ * Note: dirname() may return "\" on Windows — normalize separators. */
+$basePath = str_replace('\\', '/', rtrim((string) dirname($_SERVER['SCRIPT_NAME'] ?? '/index.php'), '/\\'));
+
+/* Absolute base URL, used for the hreflang alternates. */
+$https = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off');
+$baseUrl = ($https ? 'https' : 'http') . '://'
+    . ($_SERVER['HTTP_HOST'] ?? 'localhost')
+    . $basePath;
+
+function e(string $value): string
+{
+    return htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
+}
+
+/* Clean per-language URLs: "/" for pt, "/en/" for en. */
+function langUrl(string $target): string
+{
+    global $basePath;
+    return $target === 'en' ? $basePath . '/en/' : $basePath . '/';
+}
+
+/* =====================================================================
+ * Price catalogue — structure & prices (language-neutral).
+ * Translatable strings live in lang/{lang}.php.
+ *
+ * Block types:
+ *   ['type' => 'row',     'item' => KEY, 'price' => '30€', 'mins' => 60]
+ *   ['type' => 'section', 'section' => KEY]
+ *   ['type' => 'desc',    'desc' => KEY]
+ * ===================================================================== */
+$catalog = [
+    'bem-estar' => [
+        'tax'    => 'tax_note_wellness',
+        'blocks' => [
+            ['type' => 'row', 'item' => 'item_circuito_thalasso', 'price' => '30€', 'mins' => 60],
+            ['type' => 'row', 'item' => 'item_pack_3_circuitos', 'price' => '85,50€'],
+            ['type' => 'row', 'item' => 'item_pack_5_circuitos', 'price' => '138,75€'],
+            ['type' => 'row', 'item' => 'item_pack_10_circuitos', 'price' => '270€'],
+            ['type' => 'row', 'item' => 'item_thalasso_experience', 'price' => '67€', 'mins' => 120],
+            ['type' => 'section', 'section' => 'section_balneoterapia'],
+            ['type' => 'row', 'item' => 'item_duche_vichy_massagem', 'price' => '42€', 'mins' => 25],
+            ['type' => 'row', 'item' => 'item_hidromassagem_banheira', 'price' => '35€', 'mins' => 15],
+            ['type' => 'row', 'item' => 'item_hidromassagem_algas', 'price' => '40€', 'mins' => 15],
+            ['type' => 'row', 'item' => 'item_thalaxion', 'price' => '35€', 'mins' => 20],
+            ['type' => 'row', 'item' => 'item_phlebotone', 'price' => '26€', 'mins' => 15],
+            ['type' => 'section', 'section' => 'section_terapia_respiratoria'],
+            ['type' => 'desc', 'desc' => 'desc_terapia_respiratoria'],
+            ['type' => 'row', 'item' => 'item_pack_3_terapia_respiratoria', 'price' => '45€'],
+            ['type' => 'section', 'section' => 'section_massagens'],
+            ['type' => 'row', 'item' => 'item_massagem_localizada', 'price' => '40€', 'mins' => 30],
+            ['type' => 'row', 'item' => 'item_massagem_relaxamento_40', 'price' => '50€', 'mins' => 40],
+            ['type' => 'row', 'item' => 'item_massagem_relaxamento_60', 'price' => '65€', 'mins' => 60],
+            ['type' => 'row', 'item' => 'item_massagem_casal', 'price' => '110€', 'mins' => 60],
+            ['type' => 'row', 'item' => 'item_massagem_terapeutica', 'price' => '45€', 'mins' => 30],
+            ['type' => 'row', 'item' => 'item_drenagem_linfatica', 'price' => '65€', 'mins' => 60],
+            ['type' => 'section', 'section' => 'section_tratamentos_corporais'],
+            ['type' => 'row', 'item' => 'item_envolvimento_algas', 'price' => '67€'],
+            ['type' => 'row', 'item' => 'item_envolvimento_lamas', 'price' => '67€'],
+            ['type' => 'row', 'item' => 'item_envolvimento_drenante', 'price' => '55€'],
+            ['type' => 'row', 'item' => 'item_envolvimento_redutor', 'price' => '69€'],
+            ['type' => 'row', 'item' => 'item_envolvimento_crioterapia', 'price' => '61€'],
+            ['type' => 'row', 'item' => 'item_esfoliacao_sal_marinho', 'price' => '39€'],
+            ['type' => 'row', 'item' => 'item_esfoliacao_geleia_aquatica', 'price' => '39€'],
+            ['type' => 'row', 'item' => 'item_esfoliacao_lamas_sais', 'price' => '62€'],
+            ['type' => 'row', 'item' => 'item_tratamento_pes_pernas', 'price' => '49€'],
+            ['type' => 'section', 'section' => 'section_tratamentos_faciais'],
+            ['type' => 'row', 'item' => 'item_mini_facial_hidratante', 'price' => '45€'],
+            ['type' => 'row', 'item' => 'item_limpeza_pele', 'price' => '70€'],
+            ['type' => 'row', 'item' => 'item_facial_desintoxicante_algas', 'price' => '80€'],
+            ['type' => 'row', 'item' => 'item_facial_personalizado', 'price' => '95€'],
+            ['type' => 'section', 'section' => 'section_rituais'],
+            ['type' => 'row', 'item' => 'item_ritual_polinesia', 'price' => '115€'],
+            ['type' => 'row', 'item' => 'item_renaissance', 'price' => '70€'],
+            ['type' => 'row', 'item' => 'item_oceano_profundo_120', 'price' => '115€'],
+            ['type' => 'row', 'item' => 'item_oceano_profundo_90', 'price' => '85€'],
+            ['type' => 'row', 'item' => 'item_pure_relax_homem', 'price' => '85€'],
+        ],
+    ],
+    'cura' => [
+        'tax'    => 'tax_note_cure',
+        'blocks' => [
+            ['type' => 'section', 'section' => 'section_hidroterapia'],
+            ['type' => 'row', 'item' => 'item_hidrocinesio_individual_60', 'price' => '25,85€'],
+            ['type' => 'row', 'item' => 'item_5_hidrocinesio', 'price' => '119,57€'],
+            ['type' => 'row', 'item' => 'item_10_hidrocinesio', 'price' => '232,68€'],
+            ['type' => 'row', 'item' => 'item_hidrocinesio_terapeuta_50', 'price' => '43,09€'],
+            ['type' => 'row', 'item' => 'item_5_hidrocinesio_terapeuta', 'price' => '183,13€'],
+            ['type' => 'row', 'item' => 'item_10_hidrocinesio_terapeuta', 'price' => '344,72€'],
+            ['type' => 'row', 'item' => 'item_duche_vichy_cura', 'price' => '36,20€'],
+            ['type' => 'row', 'item' => 'item_duche_jato', 'price' => '18,96€'],
+            ['type' => 'row', 'item' => 'item_duche_escoces', 'price' => '18,96€'],
+            ['type' => 'row', 'item' => 'item_duche_subaquatico', 'price' => '30,16€'],
+            ['type' => 'row', 'item' => 'item_hidromassagem_banheira_cura', 'price' => '30,16€'],
+            ['type' => 'row', 'item' => 'item_hidromassagem_algas_cura', 'price' => '34,47€'],
+            ['type' => 'row', 'item' => 'item_thalaxion_cura', 'price' => '30,16€'],
+            ['type' => 'row', 'item' => 'item_phlebotone_cura', 'price' => '22,41€'],
+            ['type' => 'row', 'item' => 'item_terapia_respiratoria_cura', 'price' => '15,51€'],
+            ['type' => 'row', 'item' => 'item_pack_5_terapia_respiratoria', 'price' => '64,63€'],
+            ['type' => 'row', 'item' => 'item_pack_10_terapia_respiratoria', 'price' => '119,32€'],
+            ['type' => 'section', 'section' => 'section_termoterapia'],
+            ['type' => 'row', 'item' => 'item_aplicacao_algas_local', 'price' => '38,78€'],
+            ['type' => 'row', 'item' => 'item_aplicacao_algas_geral', 'price' => '57,74€'],
+            ['type' => 'row', 'item' => 'item_aplicacao_lamas_local', 'price' => '38,78€'],
+            ['type' => 'row', 'item' => 'item_aplicacao_lamas_geral', 'price' => '57,74€'],
+            ['type' => 'section', 'section' => 'section_massoterapia'],
+            ['type' => 'row', 'item' => 'item_massagem_terapeutica_cura', 'price' => '38,78€'],
+            ['type' => 'section', 'section' => 'section_fisioterapia'],
+            ['type' => 'row', 'item' => 'item_sessao_fisioterapia', 'price' => '27€'],
+            ['type' => 'row', 'item' => 'item_pack_3_fisioterapia', 'price' => '76,95€'],
+            ['type' => 'row', 'item' => 'item_pack_5_fisioterapia', 'price' => '124,88€'],
+            ['type' => 'row', 'item' => 'item_pack_10_fisioterapia', 'price' => '229,50€'],
+            ['type' => 'section', 'section' => 'section_programas_7'],
+            ['type' => 'row', 'item' => 'item_programa_respiratoria_7', 'price' => '398,09€'],
+            ['type' => 'row', 'item' => 'item_programa_circulatoria_7', 'price' => '368,82€'],
+            ['type' => 'row', 'item' => 'item_programa_antistress_7', 'price' => '430,01€'],
+            ['type' => 'row', 'item' => 'item_programa_psoriase_7', 'price' => '474,81€'],
+            ['type' => 'row', 'item' => 'item_programa_reumatismo_7', 'price' => '443,79€'],
+            ['type' => 'row', 'item' => 'item_programa_neurologicas_7', 'price' => '379,43€'],
+            ['type' => 'section', 'section' => 'section_programas_14'],
+            ['type' => 'row', 'item' => 'item_programa_respiratoria_14', 'price' => '796,18€'],
+            ['type' => 'row', 'item' => 'item_programa_circulatoria_14', 'price' => '753,14€'],
+            ['type' => 'row', 'item' => 'item_programa_antistress_14', 'price' => '866,06€'],
+            ['type' => 'row', 'item' => 'item_programa_psoriase_14', 'price' => '977,20€'],
+            ['type' => 'row', 'item' => 'item_programa_reumatismo_14', 'price' => '887,58€'],
+            ['type' => 'row', 'item' => 'item_programa_neurologicas_14', 'price' => '762,02€'],
+        ],
+    ],
+];
+
+function renderPanel(array $panel, array $t): void
+{
+    echo '<p class="price-tax-note">', e($t['ui'][$panel['tax']]), "</p>\n";
+
+    foreach ($panel['blocks'] as $block) {
+        switch ($block['type']) {
+            case 'section':
+                $section = $t['sections'][$block['section']];
+                echo '<div class="section-band">', e($section['title']);
+                if (isset($section['duration'])) {
+                    echo ' <span>◷ ', e($section['duration']), '</span>';
+                }
+                echo "</div>\n";
+                break;
+
+            case 'desc':
+                echo '<p class="section-desc">', e($t['descs'][$block['desc']]), "</p>\n";
+                break;
+
+            case 'row':
+                $item = $t['items'][$block['item']];
+                echo "<div class=\"price-row\">\n";
+                echo "  <div>\n";
+                echo '    <div class="item-name">', e($item['name']), "</div>\n";
+                if (isset($item['duration'])) {
+                    $titleAttr = isset($block['mins'])
+                        ? ' title="' . e(sprintf($t['ui']['duration_title'], $block['mins'])) . '"'
+                        : '';
+                    echo '    <div class="item-duration"', $titleAttr, '><span aria-hidden="true">◷</span> ', e($item['duration']), "</div>\n";
+                }
+                if (isset($item['desc'])) {
+                    echo '    <div class="item-desc">', e($item['desc']), "</div>\n";
+                }
+                echo "  </div>\n";
+                echo '  <div class="item-price">', e($block['price']), "</div>\n";
+                echo "</div>\n";
+                break;
+        }
+    }
+}
+?>
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="<?= e($lang) ?>">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Relative asset URLs resolve from the app root, even under /en/ -->
+    <base href="<?= e($basePath) ?>/">
 
     <!-- CSS VENDOR -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
@@ -12,7 +209,11 @@
     <!-- CSS MAIN -->
     <link rel="stylesheet" href="assets/css/main.css">
 
-    <title>Thalasso Nazaré - Preçário</title>
+    <title><?= e($t['ui']['document_title']) ?></title>
+
+    <link rel="alternate" hreflang="pt" href="<?= e($baseUrl) ?>/">
+    <link rel="alternate" hreflang="en" href="<?= e($baseUrl) ?>/en/">
+    <link rel="alternate" hreflang="x-default" href="<?= e($baseUrl) ?>/">
 </head>
 
 <body>
@@ -22,21 +223,21 @@
 
         <div class="container text-center header-content">
             <div class="dropdown language-selector">
-                <button class="language-selector__button" type="button" id="language-selector" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Selecionar idioma">
+                <button class="language-selector__button" type="button" id="language-selector" data-bs-toggle="dropdown" aria-expanded="false" aria-label="<?= e($t['ui']['selector_aria']) ?>">
                     <svg class="language-selector__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                         <circle cx="12" cy="12" r="8.5"></circle>
                         <path d="M3.5 12h17M12 3.5c2.25 2.32 3.5 5.25 3.5 8.5S14.25 18.18 12 20.5c-2.25-2.32-3.5-5.25-3.5-8.5S9.75 5.82 12 3.5Z"></path>
                     </svg>
-                    <span class="language-selector__current">PT</span>
+                    <span class="language-selector__current"><?= e(strtoupper($lang)) ?></span>
                     <span class="language-selector__chevron" aria-hidden="true"></span>
                 </button>
                 <ul class="dropdown-menu dropdown-menu-end language-selector__menu" aria-labelledby="language-selector">
-                    <li><button class="dropdown-item active" type="button" data-language="pt" lang="pt" aria-current="true">PT <span>Português</span></button></li>
-                    <li><button class="dropdown-item" type="button" data-language="en" lang="en">EN <span>English</span></button></li>
+                    <li><a class="dropdown-item<?= $lang === 'pt' ? ' active' : '' ?>" href="<?= e(langUrl('pt')) ?>" lang="pt" <?= $lang === 'pt' ? ' aria-current="true"' : '' ?>>PT <span>Português</span></a></li>
+                    <li><a class="dropdown-item<?= $lang === 'en' ? ' active' : '' ?>" href="<?= e(langUrl('en')) ?>" lang="en" <?= $lang === 'en' ? ' aria-current="true"' : '' ?>>EN <span>English</span></a></li>
                 </ul>
             </div>
             <div id="logo">
-                <img src="assets/images/thalasso_logo.png" alt="Thalasso Nazaré - A cura que vem do mar." class="img-fluid">
+                <img src="assets/images/thalasso_logo.png" alt="<?= e($t['ui']['logo_alt']) ?>" class="img-fluid">
             </div>
 
         </div>
@@ -45,568 +246,35 @@
 
     <!-- ======= Main Section ======= -->
     <main class="container">
-        <h1 class="page-title">Preçário</h1>
+        <h1 class="page-title"><?= e($t['ui']['page_title']) ?></h1>
 
         <!-- Price Toggle -->
         <div class="toggle-wrap">
-            <div class="price-toggle" role="tablist" aria-label="Selecionar categoria de preçário">
-                <button type="button" id="btn-bem-estar" class="active" role="tab" aria-selected="true" aria-controls="painel-bem-estar">Bem-Estar</button>
-                <button type="button" id="btn-cura" role="tab" aria-selected="false" aria-controls="painel-cura">Cura</button>
+            <div class="price-toggle" role="tablist" aria-label="<?= e($t['ui']['toggle_aria']) ?>">
+                <button type="button" id="btn-bem-estar" class="active" role="tab" aria-selected="true" aria-controls="painel-bem-estar"><?= e($t['ui']['toggle_wellness']) ?></button>
+                <button type="button" id="btn-cura" role="tab" aria-selected="false" aria-controls="painel-cura"><?= e($t['ui']['toggle_cure']) ?></button>
             </div>
         </div>
 
         <!-- BEM-ESTAR PANEL -->
         <section class="price-panel" id="painel-bem-estar" role="tabpanel" aria-labelledby="btn-bem-estar">
-            <p class="price-tax-note">Preços com IVA incluído à taxa legal de 23%.</p>
-            <div class="price-row">
-                <div>
-                    <div class="item-name">Circuito Thalasso</div>
-                    <div class="item-duration" title="Duração aproximada: 60 minutos"><span aria-hidden="true">◷</span> 60 min.</div>
-                    <div class="item-desc">Piscina dinâmica com água do mar aquecida, contra-corrente, corredor pedonal, banho turco, duches de contraste, fonte de gelo e relaxamento.</div>
-                </div>
-                <div class="item-price">30€</div>
-            </div>
-
-            <div class="price-row">
-                <div class="item-name">Pack 3 Sessões Circuito Thalasso</div>
-                <div class="item-price">85,50€</div>
-            </div>
-
-            <div class="price-row">
-                <div class="item-name">Pack 5 Sessões Circuito Thalasso</div>
-                <div class="item-price">138,75€</div>
-            </div>
-
-            <div class="price-row">
-                <div class="item-name">Pack 10 Sessões Circuito Thalasso</div>
-                <div class="item-price">270€</div>
-            </div>
-
-            <div class="price-row">
-                <div>
-                    <div class="item-name">Thalasso Experience</div>
-                    <div class="item-duration" title="Duração aproximada: 120 minutos"><span aria-hidden="true">◷</span> 120 min.</div>
-                    <div class="item-desc">Circuito thalasso + envolvimento de lamas ou algas marinhas + creme hidratante ou óleo</div>
-                </div>
-                <div class="item-price">67€</div>
-            </div>
-
-            <div class="section-band">BALNEOTERAPIA</div>
-
-            <div class="price-row">
-                <div>
-                    <div class="item-name">Duche Vichy c/ massagem completa</div>
-                    <div class="item-duration" title="Duração aproximada: 25 minutos"><span aria-hidden="true">◷</span> 25 min.</div>
-                </div>
-                <div class="item-price">42€</div>
-            </div>
-
-            <div class="price-row">
-                <div>
-                    <div class="item-name">Hidromassagem em banheira individual</div>
-                    <div class="item-duration" title="Duração aproximada: 15 minutos"><span aria-hidden="true">◷</span> 15 min.</div>
-                </div>
-                <div class="item-price">35€</div>
-            </div>
-
-            <div class="price-row">
-                <div>
-                    <div class="item-name">Hidromassagem com algas</div>
-                    <div class="item-duration" title="Duração aproximada: 15 minutos"><span aria-hidden="true">◷</span> 15 min.</div>
-                </div>
-                <div class="item-price">40€</div>
-            </div>
-
-            <div class="price-row">
-                <div>
-                    <div class="item-name">Thalaxion</div>
-                    <div class="item-duration" title="Duração aproximada: 20 minutos"><span aria-hidden="true">◷</span> 20 min.</div>
-                </div>
-                <div class="item-price">35€</div>
-            </div>
-
-            <div class="price-row">
-                <div>
-                    <div class="item-name">Phlebotone</div>
-                    <div class="item-duration" title="Duração aproximada: 15 minutos"><span aria-hidden="true">◷</span> 15 min.</div>
-                </div>
-                <div class="item-price">26€</div>
-            </div>
-
-            <div class="section-band">TERAPIA RESPIRATÓRIA <span>◷ 15 min.</span></div>
-            <p class="section-desc">Duche nasal, nebulização ou aerossol.</p>
-
-            <div class="price-row">
-                <div class="item-name">Pack 3 Sessões Terapia Respiratória</div>
-                <div class="item-price">45€</div>
-            </div>
-
-            <div class="section-band">MASSAGENS</div>
-
-            <div class="price-row">
-                <div>
-                    <div class="item-name">Massagem localizada</div>
-                    <div class="item-duration" title="Duração aproximada: 30 minutos"><span aria-hidden="true">◷</span> 30 min.</div>
-                </div>
-                <div class="item-price">40€</div>
-            </div>
-
-            <div class="price-row">
-                <div>
-                    <div class="item-name">Massagem de relaxamento corporal</div>
-                    <div class="item-duration" title="Duração aproximada: 40 minutos"><span aria-hidden="true">◷</span> 40 min.</div>
-                </div>
-                <div class="item-price">50€</div>
-            </div>
-
-            <div class="price-row">
-                <div>
-                    <div class="item-name">Massagem de relaxamento corporal</div>
-                    <div class="item-duration" title="Duração aproximada: 60 minutos"><span aria-hidden="true">◷</span> 60 min.</div>
-                </div>
-                <div class="item-price">65€</div>
-            </div>
-
-            <div class="price-row">
-                <div>
-                    <div class="item-name">Massagem de relaxamento de casal</div>
-                    <div class="item-duration" title="Duração aproximada: 60 minutos"><span aria-hidden="true">◷</span> 60 min.</div>
-                </div>
-                <div class="item-price">110€</div>
-            </div>
-
-            <div class="price-row">
-                <div>
-                    <div class="item-name">Massagem terapêutica</div>
-                    <div class="item-duration" title="Duração aproximada: 30 minutos"><span aria-hidden="true">◷</span> 30 min.</div>
-                </div>
-                <div class="item-price">45€</div>
-            </div>
-
-            <div class="price-row">
-                <div>
-                    <div class="item-name">Drenagem linfática manual</div>
-                    <div class="item-duration" title="Duração aproximada: 60 minutos"><span aria-hidden="true">◷</span> 60 min.</div>
-                </div>
-                <div class="item-price">65€</div>
-            </div>
-
-            <div class="section-band">TRATAMENTOS CORPORAIS</div>
-
-            <div class="price-row">
-                <div>
-                    <div class="item-name">Envolvimento corporal com algas</div>
-                    <div class="item-duration"><span aria-hidden="true">◷</span> 50 min.</div>
-                </div>
-                <div class="item-price">67€</div>
-            </div>
-            <div class="price-row">
-                <div>
-                    <div class="item-name">Envolvimento corporal com lamas marinhas</div>
-                    <div class="item-duration"><span aria-hidden="true">◷</span> 50 min.</div>
-                </div>
-                <div class="item-price">67€</div>
-            </div>
-            <div class="price-row">
-                <div>
-                    <div class="item-name">Envolvimento drenante com extratos marinhos</div>
-                    <div class="item-duration"><span aria-hidden="true">◷</span> 45 min.</div>
-                </div>
-                <div class="item-price">55€</div>
-            </div>
-            <div class="price-row">
-                <div>
-                    <div class="item-name">Envolvimento redutor</div>
-                    <div class="item-duration"><span aria-hidden="true">◷</span> 60 min.</div>
-                </div>
-                <div class="item-price">69€</div>
-            </div>
-            <div class="price-row">
-                <div>
-                    <div class="item-name">Envolvimento de crioterapia</div>
-                    <div class="item-duration"><span aria-hidden="true">◷</span> 45 min.</div>
-                    <div class="item-desc">Problemas circulatórios.</div>
-                </div>
-                <div class="item-price">61€</div>
-            </div>
-            <div class="price-row">
-                <div>
-                    <div class="item-name">Esfoliação com sal marinho</div>
-                    <div class="item-duration"><span aria-hidden="true">◷</span> 30 min.</div>
-                </div>
-                <div class="item-price">39€</div>
-            </div>
-            <div class="price-row">
-                <div>
-                    <div class="item-name">Esfoliação hidratante com geleia aquática</div>
-                    <div class="item-duration"><span aria-hidden="true">◷</span> 30 min.</div>
-                </div>
-                <div class="item-price">39€</div>
-            </div>
-            <div class="price-row">
-                <div>
-                    <div class="item-name">Esfoliação com lamas e sais marinhos</div>
-                    <div class="item-duration"><span aria-hidden="true">◷</span> 60 min.</div>
-                </div>
-                <div class="item-price">62€</div>
-            </div>
-            <div class="price-row">
-                <div>
-                    <div class="item-name">Tratamento pés e pernas</div>
-                    <div class="item-duration"><span aria-hidden="true">◷</span> 45 min.</div>
-                    <div class="item-desc">Banho, esfoliação e massagem.</div>
-                </div>
-                <div class="item-price">49€</div>
-            </div>
-
-            <div class="section-band">TRATAMENTOS FACIAIS</div>
-
-            <div class="price-row">
-                <div>
-                    <div class="item-name">Mini-facial hidratante</div>
-                    <div class="item-duration"><span aria-hidden="true">◷</span> 30 min.</div>
-                </div>
-                <div class="item-price">45€</div>
-            </div>
-            <div class="price-row">
-                <div>
-                    <div class="item-name">Limpeza de pele</div>
-                    <div class="item-duration"><span aria-hidden="true">◷</span> 90 min.</div>
-                    <div class="item-desc">Com extração.</div>
-                </div>
-                <div class="item-price">70€</div>
-            </div>
-            <div class="price-row">
-                <div>
-                    <div class="item-name">Tratamento facial desintoxicante com algas</div>
-                    <div class="item-duration"><span aria-hidden="true">◷</span> 60 min.</div>
-                </div>
-                <div class="item-price">80€</div>
-            </div>
-            <div class="price-row">
-                <div>
-                    <div class="item-name">Tratamento de rosto personalizado</div>
-                    <div class="item-duration"><span aria-hidden="true">◷</span> 60 min.</div>
-                </div>
-                <div class="item-price">95€</div>
-            </div>
-
-            <div class="section-band">RITUAIS</div>
-
-            <div class="price-row">
-                <div>
-                    <div class="item-name">Ritual thalasso anti-stress — Polinésia</div>
-                    <div class="item-duration"><span aria-hidden="true">◷</span> 120 min.</div>
-                    <div class="item-desc">Esfoliação, hidromassagem e massagem corporal.</div>
-                </div>
-                <div class="item-price">115€</div>
-            </div>
-            <div class="price-row">
-                <div>
-                    <div class="item-name">Renaissance</div>
-                    <div class="item-duration"><span aria-hidden="true">◷</span> 60 min.</div>
-                    <div class="item-desc">Esfoliação e massagem.</div>
-                </div>
-                <div class="item-price">70€</div>
-            </div>
-            <div class="price-row">
-                <div>
-                    <div class="item-name">Oceano profundo</div>
-                    <div class="item-duration"><span aria-hidden="true">◷</span> 120 min.</div>
-                    <div class="item-desc">Esfoliação, hidromassagem e massagem temática.</div>
-                </div>
-                <div class="item-price">115€</div>
-            </div>
-            <div class="price-row">
-                <div>
-                    <div class="item-name">Oceano profundo</div>
-                    <div class="item-duration"><span aria-hidden="true">◷</span> 90 min.</div>
-                    <div class="item-desc">Esfoliação e massagem temática.</div>
-                </div>
-                <div class="item-price">85€</div>
-            </div>
-            <div class="price-row">
-                <div>
-                    <div class="item-name">Pure relax homem</div>
-                    <div class="item-duration"><span aria-hidden="true">◷</span> 90 min.</div>
-                    <div class="item-desc">Esfoliação e massagem temática.</div>
-                </div>
-                <div class="item-price">85€</div>
-            </div>
+            <?php renderPanel($catalog['bem-estar'], $t); ?>
         </section>
 
         <!-- CURA PANEL -->
         <section class="price-panel" id="painel-cura" role="tabpanel" aria-labelledby="btn-cura" hidden>
-            <p class="price-tax-note">Preços com IVA incluído à taxa legal de 6%.</p>
-            <div class="section-band">HIDROTERAPIA</div>
-            <div class="price-row">
-                <div>
-                    <div class="item-name">Hidrocinesioterapia individual em piscina</div>
-                    <div class="item-duration"><span aria-hidden="true">◷</span> 60 min.</div>
-                </div>
-                <div class="item-price">25,85€</div>
-            </div>
-            <div class="price-row">
-                <div>
-                    <div class="item-name">5 sessões de hidrocinesioterapia</div>
-                    <div class="item-duration"><span aria-hidden="true">◷</span> 60 min.</div>
-                </div>
-                <div class="item-price">119,57€</div>
-            </div>
-            <div class="price-row">
-                <div>
-                    <div class="item-name">10 sessões de hidrocinesioterapia</div>
-                    <div class="item-duration"><span aria-hidden="true">◷</span> 60 min.</div>
-                </div>
-                <div class="item-price">232,68€</div>
-            </div>
-            <div class="price-row">
-                <div>
-                    <div class="item-name">Hidrocinesioterapia individual em piscina</div>
-                    <div class="item-duration"><span aria-hidden="true">◷</span> 50 min.</div>
-                    <div class="item-desc">Com terapeuta.</div>
-                </div>
-                <div class="item-price">43,09€</div>
-            </div>
-            <div class="price-row">
-                <div class="item-name">5 sessões de hidrocinesioterapia individual em piscina (com terapeuta)</div>
-                <div class="item-price">183,13€</div>
-            </div>
-            <div class="price-row">
-                <div class="item-name">10 sessões de hidrocinesioterapia individual em piscina (com terapeuta)</div>
-                <div class="item-price">344,72€</div>
-            </div>
-            <div class="price-row">
-                <div>
-                    <div class="item-name">Duche Vichy com massagem completa</div>
-                    <div class="item-duration"><span aria-hidden="true">◷</span> 25 min.</div>
-                </div>
-                <div class="item-price">36,20€</div>
-            </div>
-            <div class="price-row">
-                <div>
-                    <div class="item-name">Duche de jato</div>
-                    <div class="item-duration"><span aria-hidden="true">◷</span> 5–8 min.</div>
-                </div>
-                <div class="item-price">18,96€</div>
-            </div>
-            <div class="price-row">
-                <div>
-                    <div class="item-name">Duche escocês</div>
-                    <div class="item-duration"><span aria-hidden="true">◷</span> 8 min.</div>
-                </div>
-                <div class="item-price">18,96€</div>
-            </div>
-            <div class="price-row">
-                <div>
-                    <div class="item-name">Duche subaquático</div>
-                    <div class="item-duration"><span aria-hidden="true">◷</span> 15 min.</div>
-                </div>
-                <div class="item-price">30,16€</div>
-            </div>
-            <div class="price-row">
-                <div>
-                    <div class="item-name">Hidromassagem em banheira individual</div>
-                    <div class="item-duration"><span aria-hidden="true">◷</span> 15 min.</div>
-                </div>
-                <div class="item-price">30,16€</div>
-            </div>
-            <div class="price-row">
-                <div>
-                    <div class="item-name">Hidromassagem com algas</div>
-                    <div class="item-duration"><span aria-hidden="true">◷</span> 15 min.</div>
-                </div>
-                <div class="item-price">34,47€</div>
-            </div>
-            <div class="price-row">
-                <div>
-                    <div class="item-name">Thalaxion (ou hidropressoterapia)</div>
-                    <div class="item-duration"><span aria-hidden="true">◷</span> 20 min.</div>
-                </div>
-                <div class="item-price">30,16€</div>
-            </div>
-            <div class="price-row">
-                <div>
-                    <div class="item-name">Phlebotone</div>
-                    <div class="item-duration"><span aria-hidden="true">◷</span> 15 min.</div>
-                </div>
-                <div class="item-price">22,41€</div>
-            </div>
-            <div class="price-row">
-                <div>
-                    <div class="item-name">Terapia respiratória</div>
-                    <div class="item-duration"><span aria-hidden="true">◷</span> 15 min.</div>
-                    <div class="item-desc">Duche nasal, nebulização ou aerossol.</div>
-                </div>
-                <div class="item-price">15,51€</div>
-            </div>
-            <div class="price-row">
-                <div class="item-name">Pack 5 Sessões Terapia Respiratória</div>
-                <div class="item-price">64,63€</div>
-            </div>
-            <div class="price-row">
-                <div class="item-name">Pack 10 Sessões Terapia Respiratória</div>
-                <div class="item-price">119,32€</div>
-            </div>
-
-            <div class="section-band">TERMOTERAPIA</div>
-            <div class="price-row">
-                <div>
-                    <div class="item-name">Aplicação de algas local</div>
-                    <div class="item-duration"><span aria-hidden="true">◷</span> 40 min.</div>
-                </div>
-                <div class="item-price">38,78€</div>
-            </div>
-            <div class="price-row">
-                <div>
-                    <div class="item-name">Aplicação de algas geral</div>
-                    <div class="item-duration"><span aria-hidden="true">◷</span> 60 min.</div>
-                </div>
-                <div class="item-price">57,74€</div>
-            </div>
-            <div class="price-row">
-                <div>
-                    <div class="item-name">Aplicação de lamas marinhas local</div>
-                    <div class="item-duration"><span aria-hidden="true">◷</span> 40 min.</div>
-                </div>
-                <div class="item-price">38,78€</div>
-            </div>
-            <div class="price-row">
-                <div>
-                    <div class="item-name">Aplicação de lamas marinhas geral</div>
-                    <div class="item-duration"><span aria-hidden="true">◷</span> 60 min.</div>
-                </div>
-                <div class="item-price">57,74€</div>
-            </div>
-
-            <div class="section-band">MASSOTERAPIA</div>
-            <div class="price-row">
-                <div>
-                    <div class="item-name">Massagem terapêutica</div>
-                    <div class="item-duration"><span aria-hidden="true">◷</span> 30 min.</div>
-                </div>
-                <div class="item-price">38,78€</div>
-            </div>
-
-            <div class="section-band">FISIOTERAPIA</div>
-            <div class="price-row">
-                <div>
-                    <div class="item-name">Sessão de fisioterapia</div>
-                    <div class="item-duration"><span aria-hidden="true">◷</span> 50 min.</div>
-                </div>
-                <div class="item-price">27€</div>
-            </div>
-            <div class="price-row">
-                <div class="item-name">Pack 3 Sessões de Fisioterapia</div>
-                <div class="item-price">76,95€</div>
-            </div>
-            <div class="price-row">
-                <div class="item-name">Pack 5 Sessões de Fisioterapia</div>
-                <div class="item-price">124,88€</div>
-            </div>
-            <div class="price-row">
-                <div class="item-name">Pack 10 Sessões de Fisioterapia</div>
-                <div class="item-price">229,50€</div>
-            </div>
-
-            <div class="section-band">PROGRAMAS TERAPÊUTICOS <span>◷ 7 dias</span></div>
-            <div class="price-row">
-                <div>
-                    <div class="item-name">Terapia Respiratória</div>
-                    <div class="item-desc">7 circuitos piscina e 14 sessões de inalação (irrigações, nebulizações).</div>
-                </div>
-                <div class="item-price">398,09€</div>
-            </div>
-            <div class="price-row">
-                <div>
-                    <div class="item-name">Terapia Circulatória</div>
-                    <div class="item-desc">7 circuitos piscina, 3 pedilúvios, 2 hidromassagens e 2 thalaxion.</div>
-                </div>
-                <div class="item-price">368,82€</div>
-            </div>
-            <div class="price-row">
-                <div>
-                    <div class="item-name">Terapia Anti-stress</div>
-                    <div class="item-desc">7 circuitos piscina, 3 hidromassagens, 2 massagens corporais e 2 duches Vichy com massagem completa.</div>
-                </div>
-                <div class="item-price">430,01€</div>
-            </div>
-            <div class="price-row">
-                <div>
-                    <div class="item-name">Psoríase e Problemas Dermatológicos</div>
-                    <div class="item-desc">7 circuitos piscina, 3 aplicações de algas corporais e 4 hidromassagens.</div>
-                </div>
-                <div class="item-price">474,81€</div>
-            </div>
-            <div class="price-row">
-                <div>
-                    <div class="item-name">Reumatismo e Esquelética</div>
-                    <div class="item-desc">7 circuitos piscina, 1 hidromassagem, 2 aplicações de algas corporais, 1 duche Vichy com massagem completa e 3 sessões de fisioterapia.</div>
-                </div>
-                <div class="item-price">443,79€</div>
-            </div>
-            <div class="price-row">
-                <div>
-                    <div class="item-name">Sequelas Neurológicas</div>
-                    <div class="item-desc">7 circuitos piscina, 4 sessões de fisioterapia/hidroterapia e 3 thalaxion.</div>
-                </div>
-                <div class="item-price">379,43€</div>
-            </div>
-
-            <div class="section-band">PROGRAMAS TERAPÊUTICOS <span>◷ 14 dias</span></div>
-            <div class="price-row">
-                <div>
-                    <div class="item-name">Terapia Respiratória</div>
-                    <div class="item-desc">14 circuitos piscina e 28 sessões de inalação (irrigações, nebulizações).</div>
-                </div>
-                <div class="item-price">796,18€</div>
-            </div>
-            <div class="price-row">
-                <div>
-                    <div class="item-name">Terapia Circulatória</div>
-                    <div class="item-desc">14 circuitos piscina, 4 pedilúvios, 5 hidromassagens e 5 thalaxion.</div>
-                </div>
-                <div class="item-price">753,14€</div>
-            </div>
-            <div class="price-row">
-                <div>
-                    <div class="item-name">Terapia Anti-stress</div>
-                    <div class="item-desc">14 circuitos piscina, 5 hidromassagens, 4 massagens corporais e 5 duches Vichy com massagem completa.</div>
-                </div>
-                <div class="item-price">866,06€</div>
-            </div>
-            <div class="price-row">
-                <div>
-                    <div class="item-name">Psoríase e Problemas Dermatológicos</div>
-                    <div class="item-desc">14 circuitos piscina, 7 aplicações de algas corporais e 7 hidromassagens.</div>
-                </div>
-                <div class="item-price">977,20€</div>
-            </div>
-            <div class="price-row">
-                <div>
-                    <div class="item-name">Reumatismo e Esquelética</div>
-                    <div class="item-desc">14 circuitos piscina, 2 hidromassagens, 4 aplicações de algas corporais, 2 duches Vichy com massagem completa e 6 sessões de fisioterapia.</div>
-                </div>
-                <div class="item-price">887,58€</div>
-            </div>
-            <div class="price-row">
-                <div>
-                    <div class="item-name">Sequelas Neurológicas</div>
-                    <div class="item-desc">14 circuitos piscina, 7 sessões de fisioterapia/hidroterapia e 7 thalaxion.</div>
-                </div>
-                <div class="item-price">762,02€</div>
-            </div>
+            <?php renderPanel($catalog['cura'], $t); ?>
         </section>
     </main> <!-- ======= end Main Section ======= -->
 
     <!-- ======= Footer Section ======= -->
     <footer id="footer">
-        <p>Centro de Talassoterapia</p>
+        <p><?= e($t['ui']['footer_tagline']) ?></p>
         <p>262 560 450 | <a href="mailto:info@thalassonazare.com">info@thalassonazare.com</a></p>
         <p><a href="https://www.thalassonazare.com" target="_blank" rel="noopener">www.thalassonazare.com</a></p>
     </footer> <!-- ======= end Footer Section ======= -->
 
-    <button class="back-to-top" type="button" aria-label="Voltar ao topo" title="Voltar ao topo">
+    <button class="back-to-top" type="button" aria-label="<?= e($t['ui']['back_to_top']) ?>" title="<?= e($t['ui']['back_to_top']) ?>">
         <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
             <path d="m6 14 6-6 6 6"></path>
         </svg>

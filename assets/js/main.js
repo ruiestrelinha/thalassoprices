@@ -20,23 +20,8 @@
   btnBemEstar.addEventListener("click", () => show("bem-estar"));
   btnCura.addEventListener("click", () => show("cura"));
 
-  const languageSelector = document.getElementById("language-selector");
-  const currentLanguage = languageSelector.querySelector(".language-selector__current");
-  const languageOptions = document.querySelectorAll("[data-language]");
-
-  languageOptions.forEach((option) => {
-    option.addEventListener("click", () => {
-      const language = option.dataset.language;
-
-      currentLanguage.textContent = language.toUpperCase();
-      document.documentElement.lang = language;
-      languageOptions.forEach((item) => {
-        const isSelected = item === option;
-        item.classList.toggle("active", isSelected);
-        item.toggleAttribute("aria-current", isSelected);
-      });
-    });
-  });
+  // Language switching is handled server-side (see index.php).
+  // The Bootstrap dropdown below only needs the data-bs-toggle attribute.
 
   const backToTopButton = document.querySelector(".back-to-top");
 
