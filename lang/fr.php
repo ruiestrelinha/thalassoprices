@@ -14,7 +14,7 @@ return [
         'selector_aria'    => 'Choisir la langue',
         'toggle_aria'      => 'Choisir une catégorie de tarifs',
         'toggle_wellness'  => 'Bien-être',
-        'toggle_cure'      => 'Cure Thermale',
+        'toggle_cure'      => 'Cure',
         'tax_note_wellness' => 'Prix TTC au taux légal de 23 %.',
         'tax_note_cure'     => 'Prix TTC au taux légal de 6 %.',
         'logo_alt'          => 'Thalasso Nazaré - Le soin qui vient de la mer.',
@@ -28,50 +28,50 @@ return [
         'section_balneoterapia'        => ['title' => 'BALNÉOTHÉRAPIE'],
         'section_terapia_respiratoria' => ['title' => 'THÉRAPIE RESPIRATOIRE', 'duration' => '15 min.'],
         'section_massagens'            => ['title' => 'MASSAGES'],
-        'section_tratamentos_corporais' => ['title' => 'SOINS CORPS'],
-        'section_tratamentos_faciais'   => ['title' => 'SOINS VISAGE'],
-        'section_rituais'              => ['title' => 'RITUELS'],
+        'section_tratamentos_corporais' => ['title' => 'SOINS CORPORELS'],
+        'section_tratamentos_faciais'   => ['title' => 'SOINS DU VISAGE'],
+        'section_rituais'              => ['title' => 'RITUELS CORPORELS'],
         'section_hidroterapia'         => ['title' => 'HYDROTHÉRAPIE'],
         'section_termoterapia'         => ['title' => 'THERMOTHÉRAPIE'],
         'section_massoterapia'         => ['title' => 'MASSOTHÉRAPIE'],
-        'section_fisioterapia'         => ['title' => 'KINÉSITHÉRAPIE'],
+        'section_fisioterapia'         => ['title' => 'PHYSIOTHÉRAPIE'],
         'section_programas_7'          => ['title' => 'PROGRAMMES THÉRAPEUTIQUES', 'duration' => '7 jours'],
         'section_programas_14'         => ['title' => 'PROGRAMMES THÉRAPEUTIQUES', 'duration' => '14 jours'],
     ],
 
     /* --- Descriptions isolées (hors lignes de prix) --- */
     'descs' => [
-        'desc_terapia_respiratoria' => 'Douche nasale, nébulisation ou aérosol.',
+        'desc_terapia_respiratoria' => 'Inhalation, nébulisation ou aérosol.',
     ],
 
     /* --- Lignes de service (nom, durée, description) --- */
     'items' => [
         /* ---- Bien-être ---- */
         'item_circuito_thalasso' => [
-            'name'     => 'Circuit thalasso',
+            'name'     => 'Parcours aquatique thalasso',
             'duration' => '60 min.',
-            'desc'     => 'Piscine dynamique à eau de mer chauffée, contre-courant, couloir de marche, hammam, douches à contraste, fontaine de glace et relaxation.',
+            'desc'     => 'Piscine dynamique d\'eau de mer chauffée, bain bouillonnant, contrecourant, hammam, douches de contraste et fontaine de glace.',
         ],
         'item_pack_3_circuitos' => [
-            'name' => 'Pack 3 séances Circuit thalasso',
+            'name' => 'Pack 3 Séances Parcours Aquatique Thalasso',
         ],
         'item_pack_5_circuitos' => [
-            'name' => 'Pack 5 séances Circuit thalasso',
+            'name' => 'Pack 5 Séances Parcours Aquatique Thalasso',
         ],
         'item_pack_10_circuitos' => [
-            'name' => 'Pack 10 séances Circuit thalasso',
+            'name' => 'Pack 10 Séances Parcours Aquatique Thalasso',
         ],
         'item_thalasso_experience' => [
             'name'     => 'Thalasso Experience',
             'duration' => '120 min.',
-            'desc'     => 'Circuit thalasso + enveloppement de boue marine ou d\'algues + crème hydratante ou huile',
+            'desc'     => 'Parcours aquatique thalasso + enveloppement corporel d\'algues ou de boues marines + hydratation',
         ],
         'item_duche_vichy_massagem' => [
-            'name'     => 'Douche Vichy avec massage complet',
+            'name'     => 'Massage corporel sous douche d\'affusion',
             'duration' => '25 min.',
         ],
         'item_hidromassagem_banheira' => [
-            'name'     => 'Bain à hydromassage individuel',
+            'name'     => 'Hydromassage en baignoire individuelle',
             'duration' => '15 min.',
         ],
         'item_hidromassagem_algas' => [
@@ -83,26 +83,26 @@ return [
             'duration' => '20 min.',
         ],
         'item_phlebotone' => [
-            'name'     => 'Phlébotone',
+            'name'     => 'Phlebotone',
             'duration' => '15 min.',
         ],
         'item_pack_3_terapia_respiratoria' => [
-            'name' => 'Pack 3 séances Thérapie respiratoire',
+            'name' => 'Pack 3 Séances Thérapie Respiratoire',
         ],
         'item_massagem_localizada' => [
             'name'     => 'Massage localisé',
             'duration' => '30 min.',
         ],
         'item_massagem_relaxamento_40' => [
-            'name'     => 'Massage de relaxation du corps entier',
+            'name'     => 'Massage détente corporel',
             'duration' => '40 min.',
         ],
         'item_massagem_relaxamento_60' => [
-            'name'     => 'Massage de relaxation du corps entier',
+            'name'     => 'Massage détente corporel',
             'duration' => '60 min.',
         ],
         'item_massagem_casal' => [
-            'name'     => 'Massage de relaxation en duo',
+            'name'     => 'Massage détente couple',
             'duration' => '60 min.',
         ],
         'item_massagem_terapeutica' => [
@@ -114,19 +114,19 @@ return [
             'duration' => '60 min.',
         ],
         'item_envolvimento_algas' => [
-            'name'     => 'Enveloppement corporel aux algues',
+            'name'     => 'Enveloppement corporel d\'algues',
             'duration' => '50 min.',
         ],
         'item_envolvimento_lamas' => [
-            'name'     => 'Enveloppement corporel à la boue marine',
+            'name'     => 'Enveloppement corporel avec des boues marines',
             'duration' => '50 min.',
         ],
         'item_envolvimento_drenante' => [
-            'name'     => 'Enveloppement drainant aux extraits marins',
+            'name'     => 'Enveloppement drainant avec extraits marins',
             'duration' => '45 min.',
         ],
         'item_envolvimento_redutor' => [
-            'name'     => 'Enveloppement amincissant',
+            'name'     => 'Enveloppement minceur',
             'duration' => '60 min.',
         ],
         'item_envolvimento_crioterapia' => [
@@ -135,43 +135,43 @@ return [
             'desc'     => 'Problèmes circulatoires.',
         ],
         'item_esfoliacao_sal_marinho' => [
-            'name'     => 'Gommage au sel marin',
+            'name'     => 'Gommage corporel au sel marin',
             'duration' => '30 min.',
         ],
         'item_esfoliacao_geleia_aquatica' => [
-            'name'     => 'Gommage hydratant à la gelée aquatique',
+            'name'     => 'Gommage corporel avec gelée aquatique',
             'duration' => '30 min.',
         ],
         'item_esfoliacao_lamas_sais' => [
-            'name'     => 'Gommage à la boue et aux sels marins',
+            'name'     => 'Gommage avec boues et sels marins',
             'duration' => '60 min.',
         ],
         'item_tratamento_pes_pernas' => [
-            'name'     => 'Soin pieds et jambes',
+            'name'     => 'Soin drainant pour les pieds et les jambes',
             'duration' => '45 min.',
             'desc'     => 'Bain, gommage et massage.',
         ],
         'item_mini_facial_hidratante' => [
-            'name'     => 'Mini-facial hydratant',
+            'name'     => 'Soin hydratant',
             'duration' => '30 min.',
         ],
         'item_limpeza_pele' => [
-            'name'     => 'Nettoyage de peau',
+            'name'     => 'Nettoyage du visage',
             'duration' => '90 min.',
             'desc'     => 'Avec extraction.',
         ],
         'item_facial_desintoxicante_algas' => [
-            'name'     => 'Soin visage détox aux algues',
+            'name'     => 'Soin détox aux algues',
             'duration' => '60 min.',
         ],
         'item_facial_personalizado' => [
-            'name'     => 'Soin visage personnalisé',
+            'name'     => 'Soin personnalisé',
             'duration' => '60 min.',
         ],
         'item_ritual_polinesia' => [
             'name'     => 'Rituel thalasso anti-stress — Polynésie',
             'duration' => '120 min.',
-            'desc'     => 'Gommage, hydromassage et massage corporel.',
+            'desc'     => 'Gommage, bain hydromassant et massage corporel avec des sachets de sable chaud.',
         ],
         'item_renaissance' => [
             'name'     => 'Renaissance',
@@ -181,7 +181,7 @@ return [
         'item_oceano_profundo_120' => [
             'name'     => 'Océan profond',
             'duration' => '120 min.',
-            'desc'     => 'Gommage, hydromassage et massage thématique.',
+            'desc'     => 'Gommage, bain hydromassant et massage thématique.',
         ],
         'item_oceano_profundo_90' => [
             'name'     => 'Océan profond',
@@ -196,30 +196,30 @@ return [
 
         /* ---- Cure thermale ---- */
         'item_hidrocinesio_individual_60' => [
-            'name'     => 'Hydrokinésithérapie individuelle en piscine',
+            'name'     => 'Hydro-kinésithérapie en piscine',
             'duration' => '60 min.',
         ],
         'item_5_hidrocinesio' => [
-            'name'     => '5 séances d\'hydrokinésithérapie',
+            'name'     => '5 séances d\'hydro-kinésithérapie',
             'duration' => '60 min.',
         ],
         'item_10_hidrocinesio' => [
-            'name'     => '10 séances d\'hydrokinésithérapie',
+            'name'     => '10 séances d\'hydro-kinésithérapie',
             'duration' => '60 min.',
         ],
         'item_hidrocinesio_terapeuta_50' => [
-            'name'     => 'Hydrokinésithérapie individuelle en piscine',
+            'name'     => 'Hydro-kinésithérapie individuelle dans la piscine',
             'duration' => '50 min.',
             'desc'     => 'Avec thérapeute.',
         ],
         'item_5_hidrocinesio_terapeuta' => [
-            'name' => '5 séances d\'hydrokinésithérapie individuelle en piscine (avec thérapeute)',
+            'name' => '5 séances d\'hydro-kinésithérapie individuelle dans la piscine (avec thérapeute)',
         ],
         'item_10_hidrocinesio_terapeuta' => [
-            'name' => '10 séances d\'hydrokinésithérapie individuelle en piscine (avec thérapeute)',
+            'name' => '10 séances d\'hydro-kinésithérapie individuelle dans la piscine (avec thérapeute)',
         ],
         'item_duche_vichy_cura' => [
-            'name'     => 'Douche Vichy avec massage complet',
+            'name'     => 'Massage corporel sous douche d\'affusion',
             'duration' => '25 min.',
         ],
         'item_duche_jato' => [
@@ -235,46 +235,46 @@ return [
             'duration' => '15 min.',
         ],
         'item_hidromassagem_banheira_cura' => [
-            'name'     => 'Bain à hydromassage individuel',
+            'name'     => 'Hydro massage en baignoire individuelle',
             'duration' => '15 min.',
         ],
         'item_hidromassagem_algas_cura' => [
-            'name'     => 'Hydromassage aux algues',
+            'name'     => 'Hydro massage aux algues',
             'duration' => '15 min.',
         ],
         'item_thalaxion_cura' => [
-            'name'     => 'Thalaxion (ou hydropression)',
+            'name'     => 'Thalaxion (ou hydropressothérapie)',
             'duration' => '20 min.',
         ],
         'item_phlebotone_cura' => [
-            'name'     => 'Phlébotone',
+            'name'     => 'Phlebotone',
             'duration' => '15 min.',
         ],
         'item_terapia_respiratoria_cura' => [
             'name'     => 'Thérapie respiratoire',
             'duration' => '15 min.',
-            'desc'     => 'Douche nasale, nébulisation ou aérosol.',
+            'desc'     => 'Inhalation, nébulisation ou aérosol.',
         ],
         'item_pack_5_terapia_respiratoria' => [
-            'name' => 'Pack 5 séances Thérapie respiratoire',
+            'name' => 'Pack 5 Séances Thérapie Respiratoire',
         ],
         'item_pack_10_terapia_respiratoria' => [
-            'name' => 'Pack 10 séances Thérapie respiratoire',
+            'name' => 'Pack 10 Séances Thérapie Respiratoire',
         ],
         'item_aplicacao_algas_local' => [
             'name'     => 'Application d\'algues localisée',
             'duration' => '40 min.',
         ],
         'item_aplicacao_algas_geral' => [
-            'name'     => 'Application d\'algues sur tout le corps',
+            'name'     => 'Application d\'algues complète',
             'duration' => '60 min.',
         ],
         'item_aplicacao_lamas_local' => [
-            'name'     => 'Application de boue marine localisée',
+            'name'     => 'Application de boues marines localisée',
             'duration' => '40 min.',
         ],
         'item_aplicacao_lamas_geral' => [
-            'name'     => 'Application de boue marine sur tout le corps',
+            'name'     => 'Application de boues marines complète',
             'duration' => '60 min.',
         ],
         'item_massagem_terapeutica_cura' => [
@@ -282,17 +282,17 @@ return [
             'duration' => '30 min.',
         ],
         'item_sessao_fisioterapia' => [
-            'name'     => 'Séance de kinésithérapie',
+            'name'     => 'Séance de physiothérapie',
             'duration' => '50 min.',
         ],
         'item_pack_3_fisioterapia' => [
-            'name' => 'Pack 3 séances de kinésithérapie',
+            'name' => 'Pack 3 Séances de Physiothérapie',
         ],
         'item_pack_5_fisioterapia' => [
-            'name' => 'Pack 5 séances de kinésithérapie',
+            'name' => 'Pack 5 Séances de Physiothérapie',
         ],
         'item_pack_10_fisioterapia' => [
-            'name' => 'Pack 10 séances de kinésithérapie',
+            'name' => 'Pack 10 Séances de Physiothérapie',
         ],
         'item_programa_respiratoria_7' => [
             'name' => 'Thérapie respiratoire',
@@ -304,19 +304,19 @@ return [
         ],
         'item_programa_antistress_7' => [
             'name' => 'Thérapie anti-stress',
-            'desc' => '7 circuits piscine, 3 hydromassages, 2 massages corporels et 2 douches Vichy avec massage complet.',
+            'desc' => '7 circuits piscine, 3 hydromassages, 2 massages corporels et 2 douches d\'affusion avec massage complet.',
         ],
         'item_programa_psoriase_7' => [
-            'name' => 'Psoriasis et problèmes dermatologiques',
-            'desc' => '7 circuits piscine, 3 applications d\'algues sur tout le corps et 4 hydromassages.',
+            'name' => 'Psoriasis et Problèmes Dermatologiques',
+            'desc' => '7 circuits piscine, 3 applications d\'algues corporelles et 4 hydromassages.',
         ],
         'item_programa_reumatismo_7' => [
-            'name' => 'Rhumatisme et troubles ostéo-articulaires',
-            'desc' => '7 circuits piscine, 1 hydromassage, 2 applications d\'algues sur tout le corps, 1 douche Vichy avec massage complet et 3 séances de kinésithérapie.',
+            'name' => 'Rhumatisme et Squelettique',
+            'desc' => '7 circuits piscine, 1 hydromassage, 2 applications d\'algues corporelles, 1 douche d\'affusion avec massage complet et 3 séances de physiothérapie.',
         ],
         'item_programa_neurologicas_7' => [
             'name' => 'Séquelles neurologiques',
-            'desc' => '7 circuits piscine, 4 séances de kinésithérapie/hydrothérapie et 3 thalaxion.',
+            'desc' => '7 circuits piscine, 4 séances de physiothérapie/hydrothérapie et 3 thalaxion.',
         ],
         'item_programa_respiratoria_14' => [
             'name' => 'Thérapie respiratoire',
@@ -328,19 +328,19 @@ return [
         ],
         'item_programa_antistress_14' => [
             'name' => 'Thérapie anti-stress',
-            'desc' => '14 circuits piscine, 5 hydromassages, 4 massages corporels et 5 douches Vichy avec massage complet.',
+            'desc' => '14 circuits piscine, 5 hydromassages, 4 massages corporels et 5 douches d\'affusion avec massage complet.',
         ],
         'item_programa_psoriase_14' => [
-            'name' => 'Psoriasis et problèmes dermatologiques',
-            'desc' => '14 circuits piscine, 7 applications d\'algues sur tout le corps et 7 hydromassages.',
+            'name' => 'Psoriasis et Problèmes Dermatologiques',
+            'desc' => '14 circuits piscine, 7 applications d\'algues corporelles et 7 hydromassages.',
         ],
         'item_programa_reumatismo_14' => [
-            'name' => 'Rhumatisme et troubles ostéo-articulaires',
-            'desc' => '14 circuits piscine, 2 hydromassages, 4 applications d\'algues sur tout le corps, 2 douches Vichy avec massage complet et 6 séances de kinésithérapie.',
+            'name' => 'Rhumatisme et Squelettique',
+            'desc' => '14 circuits piscine, 2 hydromassages, 4 applications d\'algues corporelles, 2 douches d\'affusion avec massage complet et 6 séances de physiothérapie.',
         ],
         'item_programa_neurologicas_14' => [
             'name' => 'Séquelles neurologiques',
-            'desc' => '14 circuits piscine, 7 séances de kinésithérapie/hydrothérapie et 7 thalaxion.',
+            'desc' => '14 circuits piscine, 7 séances de physiothérapie/hydrothérapie et 7 thalaxion.',
         ],
     ],
 ];

@@ -279,7 +279,7 @@ function renderPanel(array $panel, array $t): void
 
     <!-- ======= Footer Section ======= -->
     <footer id="footer">
-        <p><?= e($t['ui']['footer_tagline']) ?></p>
+        <p><?= e($t['ui']['footer_tagline']) ?> (Thalasso Nazaré)</p>
         <p class="footer-contact">
             <svg class="footer-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path>
@@ -300,6 +300,14 @@ function renderPanel(array $panel, array $t): void
                 <path d="M3.5 12h17M12 3.5c2.25 2.32 3.5 5.25 3.5 8.5S14.25 18.18 12 20.5c-2.25-2.32-3.5-5.25-3.5-8.5S9.75 5.82 12 3.5Z"></path>
             </svg>
             <a href="https://www.thalassonazare.com" target="_blank" rel="noopener">www.thalassonazare.com</a>
+        </p>
+        <p class="footer-contact">
+            <svg class="footer-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <circle cx="9" cy="21" r="1"></circle>
+                <circle cx="20" cy="21" r="1"></circle>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+            </svg>
+            <a href="https://www.nazareonline.com" target="_blank" rel="noopener">www.nazareonline.com</a>
         </p>
     </footer> <!-- ======= end Footer Section ======= -->
 

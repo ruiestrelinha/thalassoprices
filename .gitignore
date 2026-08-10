@@ -4,3 +4,6 @@
 assets/img/
 assets/vendor/
 pdf/
+
+# PHP per-directory error log
+error_log

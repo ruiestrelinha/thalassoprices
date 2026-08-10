@@ -14,7 +14,7 @@ return [
         'selector_aria'    => 'Sprache wählen',
         'toggle_aria'      => 'Preislisten-Kategorie wählen',
         'toggle_wellness'  => 'Wellness',
-        'toggle_cure'      => 'Thermalkur',
+        'toggle_cure'      => 'Heilung',
         'tax_note_wellness' => 'Preise inkl. MwSt. zum gesetzlichen Satz von 23 %.',
         'tax_note_cure'     => 'Preise inkl. MwSt. zum gesetzlichen Satz von 6 %.',
         'logo_alt'          => 'Thalasso Nazaré - Die Heilung aus dem Meer.',
@@ -33,49 +33,49 @@ return [
         'section_rituais'              => ['title' => 'RITUALE'],
         'section_hidroterapia'         => ['title' => 'HYDROTHERAPIE'],
         'section_termoterapia'         => ['title' => 'THERMOTHERAPIE'],
-        'section_massoterapia'         => ['title' => 'MASSAGETHERAPIE'],
-        'section_fisioterapia'         => ['title' => 'PHYSIOTHERAPIE'],
-        'section_programas_7'          => ['title' => 'THERAPIEPROGRAMME', 'duration' => '7 Tage'],
-        'section_programas_14'         => ['title' => 'THERAPIEPROGRAMME', 'duration' => '14 Tage'],
+        'section_massoterapia'         => ['title' => 'MASSAGE-THERAPIE'],
+        'section_fisioterapia'         => ['title' => 'KRANKENGYMNASTIK'],
+        'section_programas_7'          => ['title' => 'THERAPEUTISCHE PROGRAMME', 'duration' => '7 Tage'],
+        'section_programas_14'         => ['title' => 'THERAPEUTISCHE PROGRAMME', 'duration' => '14 Tage'],
     ],
 
     /* --- Eigenständige Beschreibungen (ausserhalb der Preiszeilen) --- */
     'descs' => [
-        'desc_terapia_respiratoria' => 'Nasendusche, Vernebelung oder Aerosol.',
+        'desc_terapia_respiratoria' => 'Nasendusche, Vernebelung und Aerosol.',
     ],
 
     /* --- Servicezeilen (Name, Dauer, Beschreibung) --- */
     'items' => [
         /* ---- Wellness ---- */
         'item_circuito_thalasso' => [
-            'name'     => 'Thalasso-Kreislauf',
+            'name'     => 'Thalassopool Schwimmen',
             'duration' => '60 Min.',
-            'desc'     => 'Dynamisches Becken mit erwärmtem Meerwasser, Gegenstrom, Gehstrecke, türkisches Bad, Kontrastduschen, Eisbrunnen und Entspannung.',
+            'desc'     => 'Dynamisches Innenbecken mit erwärmtem Meerwasser, Fußgängerflur, türkisches Bad, Kontrastduschen, Eisbrunnen und Entspannungsraum.',
         ],
         'item_pack_3_circuitos' => [
-            'name' => 'Pack 3 Sitzungen Thalasso-Kreislauf',
+            'name' => 'Pack 3 Sitzungen Thalassopool Schwimmen',
         ],
         'item_pack_5_circuitos' => [
-            'name' => 'Pack 5 Sitzungen Thalasso-Kreislauf',
+            'name' => 'Pack 5 Sitzungen Thalassopool Schwimmen',
         ],
         'item_pack_10_circuitos' => [
-            'name' => 'Pack 10 Sitzungen Thalasso-Kreislauf',
+            'name' => 'Pack 10 Sitzungen Thalassopool Schwimmen',
         ],
         'item_thalasso_experience' => [
             'name'     => 'Thalasso-Erlebnis',
             'duration' => '120 Min.',
-            'desc'     => 'Thalasso-Kreislauf + Algen- oder Meeresschlammwickel + Feuchtigkeitscreme oder Öl',
+            'desc'     => 'Thalassopool Schwimmen + Meeresalgen- oder Meeresschlamm-Packung + feuchtigkeitsspendende Creme oder Öl',
         ],
         'item_duche_vichy_massagem' => [
             'name'     => 'Vichy-Dusche mit Ganzkörpermassage',
             'duration' => '25 Min.',
         ],
         'item_hidromassagem_banheira' => [
-            'name'     => 'Whirlpool in Einzelbadewanne',
+            'name'     => 'Whirlpoolbad in der Badewanne',
             'duration' => '15 Min.',
         ],
         'item_hidromassagem_algas' => [
-            'name'     => 'Whirlpool-Massage mit Algen',
+            'name'     => 'Algen-Hydromassage',
             'duration' => '15 Min.',
         ],
         'item_thalaxion' => [
@@ -90,15 +90,15 @@ return [
             'name' => 'Pack 3 Sitzungen Atemtherapie',
         ],
         'item_massagem_localizada' => [
-            'name'     => 'Lokale Massage',
+            'name'     => 'Lokalisierte Massage',
             'duration' => '30 Min.',
         ],
         'item_massagem_relaxamento_40' => [
-            'name'     => 'Ganzkörper-Entspannungsmassage',
+            'name'     => 'Entspannungsmassage',
             'duration' => '40 Min.',
         ],
         'item_massagem_relaxamento_60' => [
-            'name'     => 'Ganzkörper-Entspannungsmassage',
+            'name'     => 'Entspannungsmassage',
             'duration' => '60 Min.',
         ],
         'item_massagem_casal' => [
@@ -106,7 +106,7 @@ return [
             'duration' => '60 Min.',
         ],
         'item_massagem_terapeutica' => [
-            'name'     => 'Therapeutische Massage',
+            'name'     => 'Massage-Therapie',
             'duration' => '30 Min.',
         ],
         'item_drenagem_linfatica' => [
@@ -114,32 +114,32 @@ return [
             'duration' => '60 Min.',
         ],
         'item_envolvimento_algas' => [
-            'name'     => 'Algenwickel für den Körper',
+            'name'     => 'Körperpackung mit Algen',
             'duration' => '50 Min.',
         ],
         'item_envolvimento_lamas' => [
-            'name'     => 'Meeresschlammwickel für den Körper',
+            'name'     => 'Körperpackung mit Meeresschlamm',
             'duration' => '50 Min.',
         ],
         'item_envolvimento_drenante' => [
-            'name'     => 'Entschlackender Wickel mit Meeresextrakten',
+            'name'     => 'Entwässerungspackung mit Meeresextrakten',
             'duration' => '45 Min.',
         ],
         'item_envolvimento_redutor' => [
-            'name'     => 'Straffender Wickel',
+            'name'     => 'Intensive Entwässerungspackung',
             'duration' => '60 Min.',
         ],
         'item_envolvimento_crioterapia' => [
-            'name'     => 'Kryotherapie-Wickel',
+            'name'     => 'Kryotherapie-Packung',
             'duration' => '45 Min.',
-            'desc'     => 'Kreislaufprobleme.',
+            'desc'     => 'Gegen Kreislaufprobleme.',
         ],
         'item_esfoliacao_sal_marinho' => [
             'name'     => 'Peeling mit Meersalz',
             'duration' => '30 Min.',
         ],
         'item_esfoliacao_geleia_aquatica' => [
-            'name'     => 'Feuchtigkeitsspendendes Peeling mit Wassergel',
+            'name'     => 'Feuchtigkeitspeeling mit Wassergelee',
             'duration' => '30 Min.',
         ],
         'item_esfoliacao_lamas_sais' => [
@@ -147,41 +147,41 @@ return [
             'duration' => '60 Min.',
         ],
         'item_tratamento_pes_pernas' => [
-            'name'     => 'Fuss- und Beinbehandlung',
+            'name'     => 'Fuß- und Beinbehandlung',
             'duration' => '45 Min.',
             'desc'     => 'Bad, Peeling und Massage.',
         ],
         'item_mini_facial_hidratante' => [
-            'name'     => 'Feuchtigkeitsspendendes Mini-Gesichtsritual',
+            'name'     => 'Mini-Feuchtigkeitscreme',
             'duration' => '30 Min.',
         ],
         'item_limpeza_pele' => [
-            'name'     => 'Gesichtsreinigung',
+            'name'     => 'Hautreinigung',
             'duration' => '90 Min.',
             'desc'     => 'Mit Extraktion.',
         ],
         'item_facial_desintoxicante_algas' => [
-            'name'     => 'Entgiftende Gesichtsbehandlung mit Algen',
+            'name'     => 'Reinigende Algenbehandlung',
             'duration' => '60 Min.',
         ],
         'item_facial_personalizado' => [
-            'name'     => 'Individuelle Gesichtsbehandlung',
+            'name'     => 'Personalisierte Gesichtsbehandlung',
             'duration' => '60 Min.',
         ],
         'item_ritual_polinesia' => [
-            'name'     => 'Anti-Stress-Thalasso-Ritual — Polynesien',
+            'name'     => 'Thalasso-Ritual Anti-Stress — Polynesien',
             'duration' => '120 Min.',
-            'desc'     => 'Peeling, Whirlpool-Massage und Körpermassage.',
+            'desc'     => 'Peeling, Hydromassage und Körpermassage.',
         ],
         'item_renaissance' => [
-            'name'     => 'Renaissance',
+            'name'     => 'Renaissance (Urwasser)',
             'duration' => '60 Min.',
             'desc'     => 'Peeling und Massage.',
         ],
         'item_oceano_profundo_120' => [
             'name'     => 'Tiefer Ozean',
             'duration' => '120 Min.',
-            'desc'     => 'Peeling, Whirlpool-Massage und thematische Massage.',
+            'desc'     => 'Peeling, Hydromassage und thematische Massage.',
         ],
         'item_oceano_profundo_90' => [
             'name'     => 'Tiefer Ozean',
@@ -189,34 +189,34 @@ return [
             'desc'     => 'Peeling und thematische Massage.',
         ],
         'item_pure_relax_homem' => [
-            'name'     => 'Pure relax für Männer',
+            'name'     => 'Pure Entspannung',
             'duration' => '90 Min.',
-            'desc'     => 'Peeling und thematische Massage.',
+            'desc'     => 'Peeling und manuelle Massage.',
         ],
 
         /* ---- Thermalkur ---- */
         'item_hidrocinesio_individual_60' => [
-            'name'     => 'Individuelle Hydrokinesiotherapie im Becken',
+            'name'     => 'Individuelle Hydrotherapie im Schwimmbad',
             'duration' => '60 Min.',
         ],
         'item_5_hidrocinesio' => [
-            'name'     => '5 Sitzungen Hydrokinesiotherapie',
+            'name'     => '5 Sitzungen Hydrotherapie',
             'duration' => '60 Min.',
         ],
         'item_10_hidrocinesio' => [
-            'name'     => '10 Sitzungen Hydrokinesiotherapie',
+            'name'     => '10 Sitzungen Hydrotherapie',
             'duration' => '60 Min.',
         ],
         'item_hidrocinesio_terapeuta_50' => [
-            'name'     => 'Individuelle Hydrokinesiotherapie im Becken',
+            'name'     => 'Individuelle Hydrotherapie im Schwimmbad',
             'duration' => '50 Min.',
             'desc'     => 'Mit Therapeut.',
         ],
         'item_5_hidrocinesio_terapeuta' => [
-            'name' => '5 individuelle Sitzungen Hydrokinesiotherapie im Becken (mit Therapeut)',
+            'name' => '5 Sitzungen individuelle Hydrotherapie im Schwimmbad (mit Therapeut)',
         ],
         'item_10_hidrocinesio_terapeuta' => [
-            'name' => '10 individuelle Sitzungen Hydrokinesiotherapie im Becken (mit Therapeut)',
+            'name' => '10 Sitzungen individuelle Hydrotherapie im Schwimmbad (mit Therapeut)',
         ],
         'item_duche_vichy_cura' => [
             'name'     => 'Vichy-Dusche mit Ganzkörpermassage',
@@ -231,19 +231,19 @@ return [
             'duration' => '8 Min.',
         ],
         'item_duche_subaquatico' => [
-            'name'     => 'Unterwasserdusche',
+            'name'     => 'Runddusche',
             'duration' => '15 Min.',
         ],
         'item_hidromassagem_banheira_cura' => [
-            'name'     => 'Whirlpool in Einzelbadewanne',
+            'name'     => 'Whirlpoolbad in der Badewanne',
             'duration' => '15 Min.',
         ],
         'item_hidromassagem_algas_cura' => [
-            'name'     => 'Whirlpool-Massage mit Algen',
+            'name'     => 'Algen-Hydromassage',
             'duration' => '15 Min.',
         ],
         'item_thalaxion_cura' => [
-            'name'     => 'Thalaxion (oder Hydropressurtherapie)',
+            'name'     => 'Thalaxion (oder Hydropressotherapie)',
             'duration' => '20 Min.',
         ],
         'item_phlebotone_cura' => [
@@ -253,7 +253,7 @@ return [
         'item_terapia_respiratoria_cura' => [
             'name'     => 'Atemtherapie',
             'duration' => '15 Min.',
-            'desc'     => 'Nasendusche, Vernebelung oder Aerosol.',
+            'desc'     => 'Nasendusche, Vernebelung und Aerosol.',
         ],
         'item_pack_5_terapia_respiratoria' => [
             'name' => 'Pack 5 Sitzungen Atemtherapie',
@@ -262,19 +262,19 @@ return [
             'name' => 'Pack 10 Sitzungen Atemtherapie',
         ],
         'item_aplicacao_algas_local' => [
-            'name'     => 'Lokale Algenanwendung',
+            'name'     => 'Anwendung von lokalisierten Algen',
             'duration' => '40 Min.',
         ],
         'item_aplicacao_algas_geral' => [
-            'name'     => 'Ganzkörper-Algenanwendung',
+            'name'     => 'Allgemeine Algenanwendung',
             'duration' => '60 Min.',
         ],
         'item_aplicacao_lamas_local' => [
-            'name'     => 'Lokale Meeresschlamm-Anwendung',
+            'name'     => 'Anwendung von lokalisiertem Meeresschlamm',
             'duration' => '40 Min.',
         ],
         'item_aplicacao_lamas_geral' => [
-            'name'     => 'Ganzkörper-Meeresschlamm-Anwendung',
+            'name'     => 'Allgemeine Meeresschlamm-Anwendung',
             'duration' => '60 Min.',
         ],
         'item_massagem_terapeutica_cura' => [
@@ -296,51 +296,51 @@ return [
         ],
         'item_programa_respiratoria_7' => [
             'name' => 'Atemtherapie',
-            'desc' => '7 Beckenkreisläufe und 14 Inhalationssitzungen (Spülungen, Vernebelungen).',
+            'desc' => '7 Bäder im Thalasso-Becken und 14 Salzwasser-Behandlungen (Ausspülung und Inhalieren mit Zerstäuber).',
         ],
         'item_programa_circulatoria_7' => [
             'name' => 'Kreislauftherapie',
-            'desc' => '7 Beckenkreisläufe, 3 Fussbäder, 2 Whirlpool-Massagen und 2 Thalaxion.',
+            'desc' => '7 Bäder im Thalasso-Becken, 3 Fußbäder, 2 Hydromassagen und 2 Thalaxion.',
         ],
         'item_programa_antistress_7' => [
             'name' => 'Anti-Stress-Therapie',
-            'desc' => '7 Beckenkreisläufe, 3 Whirlpool-Massagen, 2 Körpermassagen und 2 Vichy-Duschen mit Ganzkörpermassage.',
+            'desc' => '7 Bäder im Thalasso-Becken, 3 Hydromassagen, 2 Körpermassagen und 2 Vichy-Duschen.',
         ],
         'item_programa_psoriase_7' => [
-            'name' => 'Psoriasis und dermatologische Probleme',
-            'desc' => '7 Beckenkreisläufe, 3 Ganzkörper-Algenanwendungen und 4 Whirlpool-Massagen.',
+            'name' => 'Psoriasis und Hautprobleme',
+            'desc' => '7 Bäder im Thalasso-Becken, 3 Algenbäder und 4 Hydromassagen.',
         ],
         'item_programa_reumatismo_7' => [
-            'name' => 'Rheuma und Skeletterkrankungen',
-            'desc' => '7 Beckenkreisläufe, 1 Whirlpool-Massage, 2 Ganzkörper-Algenanwendungen, 1 Vichy-Dusche mit Ganzkörpermassage und 3 Physiotherapie-Sitzungen.',
+            'name' => 'Rheuma und muskulo-skelettale Erkrankungen',
+            'desc' => '7 Bäder im Thalasso-Becken, 1 Hydromassage, 2 Algenbäder, 1 Vichy-Dusche und 3 physiotherapeutische Sitzungen.',
         ],
         'item_programa_neurologicas_7' => [
-            'name' => 'Neurologische Folgeerscheinungen',
-            'desc' => '7 Beckenkreisläufe, 4 Physiotherapie-/Hydrotherapie-Sitzungen und 3 Thalaxion.',
+            'name' => 'Neurologische Erkrankungen',
+            'desc' => '7 Bäder im Thalasso-Becken, 4 Physiotherapie-/Hydrotherapie-Sitzungen und 3 Thalaxion.',
         ],
         'item_programa_respiratoria_14' => [
             'name' => 'Atemtherapie',
-            'desc' => '14 Beckenkreisläufe und 28 Inhalationssitzungen (Spülungen, Vernebelungen).',
+            'desc' => '14 Bäder im Thalasso-Becken und 28 Salzwasser-Behandlungen (Ausspülung und Inhalieren mit Zerstäuber).',
         ],
         'item_programa_circulatoria_14' => [
             'name' => 'Kreislauftherapie',
-            'desc' => '14 Beckenkreisläufe, 4 Fussbäder, 5 Whirlpool-Massagen und 5 Thalaxion.',
+            'desc' => '14 Bäder im Thalasso-Becken, 4 Fußbäder, 5 Hydromassagen und 5 Thalaxion.',
         ],
         'item_programa_antistress_14' => [
             'name' => 'Anti-Stress-Therapie',
-            'desc' => '14 Beckenkreisläufe, 5 Whirlpool-Massagen, 4 Körpermassagen und 5 Vichy-Duschen mit Ganzkörpermassage.',
+            'desc' => '14 Bäder im Thalasso-Becken, 5 Hydromassagen, 4 Körpermassagen und 5 Vichy-Duschen.',
         ],
         'item_programa_psoriase_14' => [
-            'name' => 'Psoriasis und dermatologische Probleme',
-            'desc' => '14 Beckenkreisläufe, 7 Ganzkörper-Algenanwendungen und 7 Whirlpool-Massagen.',
+            'name' => 'Psoriasis und Hautprobleme',
+            'desc' => '14 Bäder im Thalasso-Becken, 7 Algenbäder und 7 Hydromassagen.',
         ],
         'item_programa_reumatismo_14' => [
-            'name' => 'Rheuma und Skeletterkrankungen',
-            'desc' => '14 Beckenkreisläufe, 2 Whirlpool-Massagen, 4 Ganzkörper-Algenanwendungen, 2 Vichy-Duschen mit Ganzkörpermassage und 6 Physiotherapie-Sitzungen.',
+            'name' => 'Rheuma und muskulo-skelettale Erkrankungen',
+            'desc' => '14 Bäder im Thalasso-Becken, 2 Hydromassagen, 4 Algenbäder, 2 Vichy-Duschen und 6 physiotherapeutische Sitzungen.',
         ],
         'item_programa_neurologicas_14' => [
-            'name' => 'Neurologische Folgeerscheinungen',
-            'desc' => '14 Beckenkreisläufe, 7 Physiotherapie-/Hydrotherapie-Sitzungen und 7 Thalaxion.',
+            'name' => 'Neurologische Erkrankungen',
+            'desc' => '14 Bäder im Thalasso-Becken, 7 Physiotherapie-/Hydrotherapie-Sitzungen und 7 Thalaxion.',
         ],
     ],
 ];

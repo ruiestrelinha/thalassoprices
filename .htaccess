@@ -14,3 +14,12 @@ RewriteRule ^en/?$ index.php?lang=en [L,QSA]
 RewriteRule ^fr/?$ index.php?lang=fr [L,QSA]
 RewriteRule ^es/?$ index.php?lang=es [L,QSA]
 RewriteRule ^de/?$ index.php?lang=de [L,QSA]
+
+# =====================================================================
+# Force PHP 8.2 for all PHP files in this folder.
+# (cPanel EasyApache 4 handler — fixes the ea-php72 libxml2 mismatch
+#  that caused the recurring error_log warnings.)
+# =====================================================================
+<FilesMatch "\.(php4|php5|php3|php2|php|phtml)$">
+    SetHandler application/x-httpd-ea-php82
+</FilesMatch>

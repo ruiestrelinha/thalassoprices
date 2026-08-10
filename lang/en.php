@@ -14,7 +14,7 @@ return [
         'selector_aria'    => 'Select language',
         'toggle_aria'      => 'Select price list category',
         'toggle_wellness'  => 'Wellness',
-        'toggle_cure'      => 'Thermal Cure',
+        'toggle_cure'      => 'Cure',
         'tax_note_wellness' => 'Prices include VAT at the legal rate of 23%.',
         'tax_note_cure'     => 'Prices include VAT at the legal rate of 6%.',
         'logo_alt'          => 'Thalasso Nazaré - The cure that comes from the sea.',
@@ -33,10 +33,10 @@ return [
         'section_rituais'              => ['title' => 'RITUALS'],
         'section_hidroterapia'         => ['title' => 'HYDROTHERAPY'],
         'section_termoterapia'         => ['title' => 'THERMOTHERAPY'],
-        'section_massoterapia'         => ['title' => 'MASSAGE THERAPY'],
+        'section_massoterapia'         => ['title' => 'MASSOTHERAPY'],
         'section_fisioterapia'         => ['title' => 'PHYSIOTHERAPY'],
-        'section_programas_7'          => ['title' => 'THERAPEUTIC PROGRAMMES', 'duration' => '7 days'],
-        'section_programas_14'         => ['title' => 'THERAPEUTIC PROGRAMMES', 'duration' => '14 days'],
+        'section_programas_7'          => ['title' => 'THERAPEUTIC PROGRAMS', 'duration' => '7 days'],
+        'section_programas_14'         => ['title' => 'THERAPEUTIC PROGRAMS', 'duration' => '14 days'],
     ],
 
     /* --- Standalone descriptions (outside price rows) --- */
@@ -50,32 +50,32 @@ return [
         'item_circuito_thalasso' => [
             'name'     => 'Thalasso Circuit',
             'duration' => '60 min.',
-            'desc'     => 'Dynamic pool with heated sea water, counter-current, walking lane, Turkish bath, contrast showers, ice fountain and relaxation.',
+            'desc'     => 'Dynamic pool with heated seawater, counter-current jets, foot bath, hammam, temperature showers, ice fountain and relaxation area.',
         ],
         'item_pack_3_circuitos' => [
-            'name' => '3-Session Thalasso Circuit Pack',
+            'name' => 'Pack 3 Sessions Thalasso Circuit',
         ],
         'item_pack_5_circuitos' => [
-            'name' => '5-Session Thalasso Circuit Pack',
+            'name' => 'Pack 5 Sessions Thalasso Circuit',
         ],
         'item_pack_10_circuitos' => [
-            'name' => '10-Session Thalasso Circuit Pack',
+            'name' => 'Pack 10 Sessions Thalasso Circuit',
         ],
         'item_thalasso_experience' => [
             'name'     => 'Thalasso Experience',
             'duration' => '120 min.',
-            'desc'     => 'Thalasso circuit + marine mud or seaweed wrap + moisturising cream or oil',
+            'desc'     => 'Thalasso circuit + seaweed or sea mud body wrap + moisturizing cream or oil',
         ],
         'item_duche_vichy_massagem' => [
-            'name'     => 'Vichy shower with full massage',
+            'name'     => 'Vichy Shower with full body massage',
             'duration' => '25 min.',
         ],
         'item_hidromassagem_banheira' => [
-            'name'     => 'Hydro-massage in a private bathtub',
+            'name'     => 'Whirlpool in individual bath',
             'duration' => '15 min.',
         ],
         'item_hidromassagem_algas' => [
-            'name'     => 'Hydro-massage with seaweed',
+            'name'     => 'Whirlpool with algae',
             'duration' => '15 min.',
         ],
         'item_thalaxion' => [
@@ -87,22 +87,22 @@ return [
             'duration' => '15 min.',
         ],
         'item_pack_3_terapia_respiratoria' => [
-            'name' => '3-Session Respiratory Therapy Pack',
+            'name' => 'Pack 3 Sessions Respiratory Therapy',
         ],
         'item_massagem_localizada' => [
-            'name'     => 'Localised massage',
+            'name'     => 'Localized massage',
             'duration' => '30 min.',
         ],
         'item_massagem_relaxamento_40' => [
-            'name'     => 'Full-body relaxation massage',
+            'name'     => 'Body relaxation massage',
             'duration' => '40 min.',
         ],
         'item_massagem_relaxamento_60' => [
-            'name'     => 'Full-body relaxation massage',
+            'name'     => 'Body relaxation massage',
             'duration' => '60 min.',
         ],
         'item_massagem_casal' => [
-            'name'     => 'Couples relaxation massage',
+            'name'     => 'Couple relaxation massage',
             'duration' => '60 min.',
         ],
         'item_massagem_terapeutica' => [
@@ -114,11 +114,11 @@ return [
             'duration' => '60 min.',
         ],
         'item_envolvimento_algas' => [
-            'name'     => 'Seaweed body wrap',
+            'name'     => 'Algae body wrap',
             'duration' => '50 min.',
         ],
         'item_envolvimento_lamas' => [
-            'name'     => 'Marine mud body wrap',
+            'name'     => 'Sea mud body wrap',
             'duration' => '50 min.',
         ],
         'item_envolvimento_drenante' => [
@@ -126,72 +126,72 @@ return [
             'duration' => '45 min.',
         ],
         'item_envolvimento_redutor' => [
-            'name'     => 'Slimming body wrap',
+            'name'     => 'Wrap reducer',
             'duration' => '60 min.',
         ],
         'item_envolvimento_crioterapia' => [
-            'name'     => 'Cryotherapy wrap',
+            'name'     => 'Cryotherapy wrapping',
             'duration' => '45 min.',
             'desc'     => 'Circulatory problems.',
         ],
         'item_esfoliacao_sal_marinho' => [
-            'name'     => 'Sea salt scrub',
+            'name'     => 'Exfoliation with sea salt',
             'duration' => '30 min.',
         ],
         'item_esfoliacao_geleia_aquatica' => [
-            'name'     => 'Hydrating scrub with aqua jelly',
+            'name'     => 'Moisturizing exfoliation with water jelly',
             'duration' => '30 min.',
         ],
         'item_esfoliacao_lamas_sais' => [
-            'name'     => 'Scrub with marine mud and sea salts',
+            'name'     => 'Exfoliation with mud and marine salts',
             'duration' => '60 min.',
         ],
         'item_tratamento_pes_pernas' => [
-            'name'     => 'Feet and legs treatment',
+            'name'     => 'Foot and leg treatment',
             'duration' => '45 min.',
-            'desc'     => 'Bath, scrub and massage.',
+            'desc'     => 'Bath, exfoliation and massage.',
         ],
         'item_mini_facial_hidratante' => [
-            'name'     => 'Hydrating mini-facial',
+            'name'     => 'Mini-facial moisturizer',
             'duration' => '30 min.',
         ],
         'item_limpeza_pele' => [
-            'name'     => 'Facial cleansing',
+            'name'     => 'Skin cleansing',
             'duration' => '90 min.',
             'desc'     => 'With extraction.',
         ],
         'item_facial_desintoxicante_algas' => [
-            'name'     => 'Detoxifying seaweed facial treatment',
+            'name'     => 'Detoxifying facial treatment with algae',
             'duration' => '60 min.',
         ],
         'item_facial_personalizado' => [
-            'name'     => 'Customised facial treatment',
+            'name'     => 'Custom face treatment',
             'duration' => '60 min.',
         ],
         'item_ritual_polinesia' => [
             'name'     => 'Anti-stress thalasso ritual — Polynesia',
             'duration' => '120 min.',
-            'desc'     => 'Scrub, hydro-massage and body massage.',
+            'desc'     => 'Exfoliation, hydromassage and body massage.',
         ],
         'item_renaissance' => [
             'name'     => 'Renaissance',
             'duration' => '60 min.',
-            'desc'     => 'Scrub and massage.',
+            'desc'     => 'Exfoliation and massage.',
         ],
         'item_oceano_profundo_120' => [
             'name'     => 'Deep ocean',
             'duration' => '120 min.',
-            'desc'     => 'Scrub, hydro-massage and themed massage.',
+            'desc'     => 'Exfoliation, hydromassage and themed massage.',
         ],
         'item_oceano_profundo_90' => [
             'name'     => 'Deep ocean',
             'duration' => '90 min.',
-            'desc'     => 'Scrub and themed massage.',
+            'desc'     => 'Exfoliation and themed massage.',
         ],
         'item_pure_relax_homem' => [
-            'name'     => 'Pure relax for men',
+            'name'     => 'Pure relax man',
             'duration' => '90 min.',
-            'desc'     => 'Scrub and themed massage.',
+            'desc'     => 'Exfoliation and themed massage.',
         ],
 
         /* ---- Thermal Cure ---- */
@@ -200,11 +200,11 @@ return [
             'duration' => '60 min.',
         ],
         'item_5_hidrocinesio' => [
-            'name'     => '5 hydrokinesiotherapy sessions',
+            'name'     => '5 Hydrokinesiotherapy sessions',
             'duration' => '60 min.',
         ],
         'item_10_hidrocinesio' => [
-            'name'     => '10 hydrokinesiotherapy sessions',
+            'name'     => '10 Hydrokinesiotherapy sessions',
             'duration' => '60 min.',
         ],
         'item_hidrocinesio_terapeuta_50' => [
@@ -213,13 +213,13 @@ return [
             'desc'     => 'With therapist.',
         ],
         'item_5_hidrocinesio_terapeuta' => [
-            'name' => '5 individual pool hydrokinesiotherapy sessions (with therapist)',
+            'name' => '5 Sessions individual hydrokinesiotherapy in the pool (with therapist)',
         ],
         'item_10_hidrocinesio_terapeuta' => [
-            'name' => '10 individual pool hydrokinesiotherapy sessions (with therapist)',
+            'name' => '10 Sessions individual hydrokinesiotherapy in the pool (with therapist)',
         ],
         'item_duche_vichy_cura' => [
-            'name'     => 'Vichy shower with full massage',
+            'name'     => 'Vichy Shower with full body massage',
             'duration' => '25 min.',
         ],
         'item_duche_jato' => [
@@ -235,15 +235,15 @@ return [
             'duration' => '15 min.',
         ],
         'item_hidromassagem_banheira_cura' => [
-            'name'     => 'Hydro-massage in a private bathtub',
+            'name'     => 'Whirlpool in individual bath',
             'duration' => '15 min.',
         ],
         'item_hidromassagem_algas_cura' => [
-            'name'     => 'Hydro-massage with seaweed',
+            'name'     => 'Whirlpool with algae',
             'duration' => '15 min.',
         ],
         'item_thalaxion_cura' => [
-            'name'     => 'Thalaxion (or hydropressure therapy)',
+            'name'     => 'Thalaxion (or Hydropressotherapy)',
             'duration' => '20 min.',
         ],
         'item_phlebotone_cura' => [
@@ -253,28 +253,28 @@ return [
         'item_terapia_respiratoria_cura' => [
             'name'     => 'Respiratory therapy',
             'duration' => '15 min.',
-            'desc'     => 'Nasal shower, nebulisation or aerosol.',
+            'desc'     => 'Nasal shower, nebulization or aerosol.',
         ],
         'item_pack_5_terapia_respiratoria' => [
-            'name' => '5-Session Respiratory Therapy Pack',
+            'name' => 'Pack 5 Sessions Respiratory therapy',
         ],
         'item_pack_10_terapia_respiratoria' => [
-            'name' => '10-Session Respiratory Therapy Pack',
+            'name' => 'Pack 10 Sessions Respiratory therapy',
         ],
         'item_aplicacao_algas_local' => [
-            'name'     => 'Localised seaweed application',
+            'name'     => 'Local algae application',
             'duration' => '40 min.',
         ],
         'item_aplicacao_algas_geral' => [
-            'name'     => 'Full-body seaweed application',
+            'name'     => 'Full algae application',
             'duration' => '60 min.',
         ],
         'item_aplicacao_lamas_local' => [
-            'name'     => 'Localised marine mud application',
+            'name'     => 'Local sea mud application',
             'duration' => '40 min.',
         ],
         'item_aplicacao_lamas_geral' => [
-            'name'     => 'Full-body marine mud application',
+            'name'     => 'Full sea mud application',
             'duration' => '60 min.',
         ],
         'item_massagem_terapeutica_cura' => [
@@ -286,13 +286,13 @@ return [
             'duration' => '50 min.',
         ],
         'item_pack_3_fisioterapia' => [
-            'name' => '3-Session Physiotherapy Pack',
+            'name' => 'Pack 3 Sessions Physiotherapy',
         ],
         'item_pack_5_fisioterapia' => [
-            'name' => '5-Session Physiotherapy Pack',
+            'name' => 'Pack 5 Sessions Physiotherapy',
         ],
         'item_pack_10_fisioterapia' => [
-            'name' => '10-Session Physiotherapy Pack',
+            'name' => 'Pack 10 Sessions Physiotherapy',
         ],
         'item_programa_respiratoria_7' => [
             'name' => 'Respiratory Therapy',
@@ -300,22 +300,22 @@ return [
         ],
         'item_programa_circulatoria_7' => [
             'name' => 'Circulatory Therapy',
-            'desc' => '7 pool circuits, 3 foot baths, 2 hydro-massages and 2 thalaxion.',
+            'desc' => '7 pool circuits, 3 footbaths, 2 whirlpools and 2 thalaxion.',
         ],
         'item_programa_antistress_7' => [
             'name' => 'Anti-stress Therapy',
-            'desc' => '7 pool circuits, 3 hydro-massages, 2 body massages and 2 Vichy showers with full massage.',
+            'desc' => '7 pool circuits, 3 whirlpools, 2 body massages and 2 Vichy showers with full body massage.',
         ],
         'item_programa_psoriase_7' => [
-            'name' => 'Psoriasis and Dermatological Conditions',
-            'desc' => '7 pool circuits, 3 seaweed applications and 4 hydro-massages.',
+            'name' => 'Psoriasis and Dermatological Problems',
+            'desc' => '7 pool circuits, 3 algae body applications and 4 whirlpools.',
         ],
         'item_programa_reumatismo_7' => [
-            'name' => 'Rheumatism and Skeletal Conditions',
-            'desc' => '7 pool circuits, 1 hydro-massage, 2 seaweed applications, 1 Vichy shower with full massage and 3 physiotherapy sessions.',
+            'name' => 'Rheumatism and Skeletal',
+            'desc' => '7 pool circuits, 1 whirlpool, 2 algae body applications, 1 Vichy shower with full body massage and 3 physiotherapy sessions.',
         ],
         'item_programa_neurologicas_7' => [
-            'name' => 'Neurological After-effects',
+            'name' => 'Neurological Sequelae',
             'desc' => '7 pool circuits, 4 physiotherapy/hydrotherapy sessions and 3 thalaxion.',
         ],
         'item_programa_respiratoria_14' => [
@@ -324,22 +324,22 @@ return [
         ],
         'item_programa_circulatoria_14' => [
             'name' => 'Circulatory Therapy',
-            'desc' => '14 pool circuits, 4 foot baths, 5 hydro-massages and 5 thalaxion.',
+            'desc' => '14 pool circuits, 4 footbaths, 5 whirlpools and 5 thalaxion.',
         ],
         'item_programa_antistress_14' => [
             'name' => 'Anti-stress Therapy',
-            'desc' => '14 pool circuits, 5 hydro-massages, 4 body massages and 5 Vichy showers with full massage.',
+            'desc' => '14 pool circuits, 5 whirlpools, 4 body massages and 5 Vichy showers with full body massage.',
         ],
         'item_programa_psoriase_14' => [
-            'name' => 'Psoriasis and Dermatological Conditions',
-            'desc' => '14 pool circuits, 7 seaweed applications and 7 hydro-massages.',
+            'name' => 'Psoriasis and Dermatological Problems',
+            'desc' => '14 pool circuits, 7 algae body applications and 7 whirlpools.',
         ],
         'item_programa_reumatismo_14' => [
-            'name' => 'Rheumatism and Skeletal Conditions',
-            'desc' => '14 pool circuits, 2 hydro-massages, 4 seaweed applications, 2 Vichy showers with full massage and 6 physiotherapy sessions.',
+            'name' => 'Rheumatism and Skeletal',
+            'desc' => '14 pool circuits, 2 whirlpools, 4 algae body applications, 2 Vichy showers with full body massage and 6 physiotherapy sessions.',
         ],
         'item_programa_neurologicas_14' => [
-            'name' => 'Neurological After-effects',
+            'name' => 'Neurological Sequelae',
             'desc' => '14 pool circuits, 7 physiotherapy/hydrotherapy sessions and 7 thalaxion.',
         ],
     ],
