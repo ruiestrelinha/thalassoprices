@@ -16,10 +16,14 @@ RewriteRule ^es/?$ index.php?lang=es [L,QSA]
 RewriteRule ^de/?$ index.php?lang=de [L,QSA]
 
 # =====================================================================
-# Force PHP 8.2 for all PHP files in this folder.
+# Force PHP 8.2 for all PHP files — ONLY on the production domain.
 # (cPanel EasyApache 4 handler — fixes the ea-php72 libxml2 mismatch
 #  that caused the recurring error_log warnings.)
+# On local development (Laragon) this handler does not exist, so the
+# block is skipped and the normal PHP handler runs instead.
 # =====================================================================
 <FilesMatch "\.(php4|php5|php3|php2|php|phtml)$">
-    SetHandler application/x-httpd-ea-php82
+    <If "%{HTTP_HOST} =~ /thalassonazare\.com$/">
+        SetHandler application/x-httpd-ea-php82
+    </If>
 </FilesMatch>
