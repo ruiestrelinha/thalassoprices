@@ -2,7 +2,7 @@
  # General
  --------------------------------------------------------------------------------*/
 :root {
-  --thalasso-green: #4f7d2a;
+  --thalasso-verdigris: #18a999;
   --thalasso-gray-dark: #2e2e2e;
   --thalasso-gray-mid: #4a4a4a;
   --thalasso-gray-light: #666666;
@@ -58,11 +58,11 @@ body {
 
 .language-selector__button:hover,
 .language-selector__button:focus-visible {
-  color: var(--thalasso-green);
+  color: var(--thalasso-verdigris);
 }
 
 .language-selector__button:focus-visible {
-  outline: 3px solid rgba(79, 125, 42, 0.25);
+  outline: 3px solid rgba(24, 169, 153, 0.25);
   outline-offset: 2px;
 }
 
@@ -119,8 +119,8 @@ body {
 .language-selector__menu .dropdown-item:hover,
 .language-selector__menu .dropdown-item:focus,
 .language-selector__menu .dropdown-item.active {
-  background: #edf3e8;
-  color: var(--thalasso-green);
+  background: #e6f5f3;
+  color: var(--thalasso-verdigris);
 }
 
 
@@ -166,14 +166,14 @@ body {
 }
 
 .price-toggle button.active {
-  background-color: var(--thalasso-green);
+  background-color: var(--thalasso-verdigris);
   color: #ffffff;
   font-weight: bold;
   font-size: 1.2rem;
 }
 
 .price-toggle button:focus-visible {
-  outline: 3px solid #1f4a0c;
+  outline: 3px solid #0b5047;
   outline-offset: 2px;
 }
 
@@ -317,7 +317,7 @@ body {
  --------------------------------------------------------------------------------*/
 .back-to-top {
   align-items: center;
-  background: var(--thalasso-green);
+  background: var(--thalasso-verdigris);
   border: 0;
   border-radius: 50%;
   bottom: 1.25rem;
@@ -344,11 +344,11 @@ body {
 }
 
 .back-to-top:hover {
-  background: #3f6721;
+  background: #12897c;
 }
 
 .back-to-top:focus-visible {
-  outline: 3px solid rgba(79, 125, 42, 0.35);
+  outline: 3px solid rgba(24, 169, 153, 0.35);
   outline-offset: 3px;
 }
 
