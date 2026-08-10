@@ -6,7 +6,7 @@ declare(strict_types=1);
  * Language selection
  * Priority: ?lang= > cookie > default (pt)
  * ===================================================================== */
-$supportedLangs = ['pt', 'en'];
+$supportedLangs = ['pt', 'en', 'fr', 'es', 'de'];
 $defaultLang = 'pt';
 
 /* URL structure: "/" serves the default language (pt), "/en/" serves English.
@@ -36,11 +36,17 @@ function e(string $value): string
     return htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
 }
 
-/* Clean per-language URLs: "/" for pt, "/en/" for en. */
+/* Language path: "/" for pt, "/en/" for the others. */
+function langPath(string $target): string
+{
+    return $target === 'pt' ? '/' : '/' . $target . '/';
+}
+
+/* Clean per-language URLs for internal links (prefixed with the app path). */
 function langUrl(string $target): string
 {
     global $basePath;
-    return $target === 'en' ? $basePath . '/en/' : $basePath . '/';
+    return $basePath . langPath($target);
 }
 
 /* =====================================================================
@@ -211,8 +217,9 @@ function renderPanel(array $panel, array $t): void
 
     <title><?= e($t['ui']['document_title']) ?></title>
 
-    <link rel="alternate" hreflang="pt" href="<?= e($baseUrl) ?>/">
-    <link rel="alternate" hreflang="en" href="<?= e($baseUrl) ?>/en/">
+    <?php foreach ($supportedLangs as $hl): ?>
+        <link rel="alternate" hreflang="<?= e($hl) ?>" href="<?= e($baseUrl . langPath($hl)) ?>">
+    <?php endforeach; ?>
     <link rel="alternate" hreflang="x-default" href="<?= e($baseUrl) ?>/">
 </head>
 
@@ -234,6 +241,9 @@ function renderPanel(array $panel, array $t): void
                 <ul class="dropdown-menu dropdown-menu-end language-selector__menu" aria-labelledby="language-selector">
                     <li><a class="dropdown-item<?= $lang === 'pt' ? ' active' : '' ?>" href="<?= e(langUrl('pt')) ?>" lang="pt" <?= $lang === 'pt' ? ' aria-current="true"' : '' ?>>PT <span>Português</span></a></li>
                     <li><a class="dropdown-item<?= $lang === 'en' ? ' active' : '' ?>" href="<?= e(langUrl('en')) ?>" lang="en" <?= $lang === 'en' ? ' aria-current="true"' : '' ?>>EN <span>English</span></a></li>
+                    <li><a class="dropdown-item<?= $lang === 'fr' ? ' active' : '' ?>" href="<?= e(langUrl('fr')) ?>" lang="fr" <?= $lang === 'fr' ? ' aria-current="true"' : '' ?>>FR <span>Français</span></a></li>
+                    <li><a class="dropdown-item<?= $lang === 'es' ? ' active' : '' ?>" href="<?= e(langUrl('es')) ?>" lang="es" <?= $lang === 'es' ? ' aria-current="true"' : '' ?>>ES <span>Español</span></a></li>
+                    <li><a class="dropdown-item<?= $lang === 'de' ? ' active' : '' ?>" href="<?= e(langUrl('de')) ?>" lang="de" <?= $lang === 'de' ? ' aria-current="true"' : '' ?>>DE <span>Deutsch</span></a></li>
                 </ul>
             </div>
             <div id="logo">
