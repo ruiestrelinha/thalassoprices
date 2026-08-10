@@ -295,6 +295,23 @@ body {
   text-decoration: underline;
 }
 
+#footer .footer-contact {
+  align-items: center;
+  display: inline-flex;
+  gap: 0.5rem;
+}
+
+#footer .footer-icon {
+  fill: none;
+  flex-shrink: 0;
+  height: 1.1rem;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.6;
+  width: 1.1rem;
+}
+
 /*--------------------------------------------------------------------------------
  # Back to Top
  --------------------------------------------------------------------------------*/

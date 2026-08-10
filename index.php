@@ -280,8 +280,27 @@ function renderPanel(array $panel, array $t): void
     <!-- ======= Footer Section ======= -->
     <footer id="footer">
         <p><?= e($t['ui']['footer_tagline']) ?></p>
-        <p>262 560 450 | <a href="mailto:info@thalassonazare.com">info@thalassonazare.com</a></p>
-        <p><a href="https://www.thalassonazare.com" target="_blank" rel="noopener">www.thalassonazare.com</a></p>
+        <p class="footer-contact">
+            <svg class="footer-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+            (+351) 262 560 450
+        </p>
+        <p class="footer-contact">
+            <svg class="footer-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            <a href="mailto:info@thalassonazare.com">info@thalassonazare.com</a>
+        </p>
+        <br>
+        <p class="footer-contact">
+            <svg class="footer-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <circle cx="12" cy="12" r="8.5"></circle>
+                <path d="M3.5 12h17M12 3.5c2.25 2.32 3.5 5.25 3.5 8.5S14.25 18.18 12 20.5c-2.25-2.32-3.5-5.25-3.5-8.5S9.75 5.82 12 3.5Z"></path>
+            </svg>
+            <a href="https://www.thalassonazare.com" target="_blank" rel="noopener">www.thalassonazare.com</a>
+        </p>
     </footer> <!-- ======= end Footer Section ======= -->
 
     <button class="back-to-top" type="button" aria-label="<?= e($t['ui']['back_to_top']) ?>" title="<?= e($t['ui']['back_to_top']) ?>">
