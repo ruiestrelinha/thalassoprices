@@ -17,10 +17,13 @@ return [
         'toggle_cure'      => 'Cura',
         'tax_note_wellness' => 'Preços com IVA incluído à taxa legal de 23%.',
         'tax_note_cure'     => 'Preços com IVA incluído à taxa legal de 6%.',
+        'vat_legend_wellness' => 'Os preços com IVA a 23% correspondem a serviços de bem-estar e relaxamento.',
+        'vat_legend_cure'     => 'Os preços com IVA a 6% correspondem a serviços de caráter terapêutico, mediante prescrição médica (ao abrigo do artigo 9.º do CIVA).',
         'logo_alt'          => 'Thalasso Nazaré - A cura que vem do mar.',
         'footer_tagline'    => 'Centro de Talassoterapia',
         'back_to_top'       => 'Voltar ao topo',
         'duration_title'    => 'Duração aproximada: %d minutos',
+        'buy_button'        => 'Comprar',
     ],
 
     /* --- Títulos de secção (bandas cinzentas) --- */
@@ -42,6 +45,20 @@ return [
     /* --- Descrições soltas (fora das linhas de preço) --- */
     'descs' => [
         'desc_terapia_respiratoria' => 'Duche nasal, nebulização ou aerossol.',
+    ],
+
+    /* --- Benefícios (tooltips de serviços técnicos) --- */
+    'tips' => [
+        'item_thalaxion'               => 'Estimula a circulação sanguínea e alivia tensões musculares através de jatos de água pressurizados.',
+        'item_thalaxion_cura'          => 'Estimula a circulação sanguínea e alivia tensões musculares através de jatos de água pressurizados.',
+        'item_phlebotone'              => 'Tratamento para pernas cansadas e má circulação, com efeito tonificante e drenante.',
+        'item_phlebotone_cura'         => 'Tratamento para pernas cansadas e má circulação, com efeito tonificante e drenante.',
+        'item_duche_subaquatico'       => 'Massagem com jatos de água morna aplicados diretamente sobre o corpo, ideal para dores musculares.',
+        'item_hidromassagem_banheira'  => 'Relaxamento profundo num banho individual de hidromassagem que alivia tensões e combate o stress.',
+        'item_hidromassagem_banheira_cura' => 'Relaxamento profundo num banho individual de hidromassagem que alivia tensões e combate o stress.',
+        'item_hidromassagem_algas'     => 'Combina a ação relaxante dos jatos com as propriedades remineralizantes das algas marinhas.',
+        'item_hidromassagem_algas_cura' => 'Combina a ação relaxante dos jatos com as propriedades remineralizantes das algas marinhas.',
+        'item_hidrocinesio_individual_60' => 'Terapia em piscina de água termal que facilita o movimento e fortalece os músculos, útil em reabilitação.',
     ],
 
     /* --- Linhas de serviço (nome, duração, descrição) --- */

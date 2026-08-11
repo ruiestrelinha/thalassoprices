@@ -17,10 +17,13 @@ return [
         'toggle_cure'      => 'Cura',
         'tax_note_wellness' => 'Precios con IVA incluido al tipo legal del 23 %.',
         'tax_note_cure'     => 'Precios con IVA incluido al tipo legal del 6 %.',
+        'vat_legend_wellness' => 'Los precios con IVA del 23 % corresponden a servicios de bienestar y relajación.',
+        'vat_legend_cure'     => 'Los precios con IVA del 6 % corresponden a servicios de carácter terapéutico, mediante prescripción médica (al amparo del artículo 9 del CIVA).',
         'logo_alt'          => 'Thalasso Nazaré - La cura que viene del mar.',
         'footer_tagline'    => 'Centro de Talasoterapia',
         'back_to_top'       => 'Volver arriba',
         'duration_title'    => 'Duración aproximada: %d minutos',
+        'buy_button'        => 'Comprar',
     ],
 
     /* --- Títulos de sección (bandas grises) --- */
@@ -42,6 +45,20 @@ return [
     /* --- Descripciones sueltas (fuera de las líneas de precio) --- */
     'descs' => [
         'desc_terapia_respiratoria' => 'Ducha nasal, nebulización o aerosol.',
+    ],
+
+    /* --- Beneficios (tooltips de servicios técnicos) --- */
+    'tips' => [
+        'item_thalaxion'               => 'Estimula la circulación sanguínea y alivia las tensiones musculares mediante chorros de agua presurizada.',
+        'item_thalaxion_cura'          => 'Estimula la circulación sanguínea y alivia las tensiones musculares mediante chorros de agua presurizada.',
+        'item_phlebotone'              => 'Tratamiento para piernas cansadas y mala circulación, con efecto tonificante y drenante.',
+        'item_phlebotone_cura'         => 'Tratamiento para piernas cansadas y mala circulación, con efecto tonificante y drenante.',
+        'item_duche_subaquatico'       => 'Masaje con chorros de agua templada aplicados directamente sobre el cuerpo, ideal para dolores musculares.',
+        'item_hidromassagem_banheira'  => 'Relajación profunda en un baño individual de hidromasaje, que alivia las tensiones musculares y combate el estrés.',
+        'item_hidromassagem_banheira_cura' => 'Relajación profunda en un baño individual de hidromasaje, que alivia las tensiones musculares y combate el estrés.',
+        'item_hidromassagem_algas'     => 'Combina la acción relajante de los chorros con las propiedades remineralizantes de las algas marinas.',
+        'item_hidromassagem_algas_cura' => 'Combina la acción relajante de los chorros con las propiedades remineralizantes de las algas marinas.',
+        'item_hidrocinesio_individual_60' => 'Terapia en piscina de agua termal que facilita el movimiento y fortalece los músculos, útil en rehabilitación.',
     ],
 
     /* --- Líneas de servicio (nombre, duración, descripción) --- */

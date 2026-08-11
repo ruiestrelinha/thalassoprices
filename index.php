@@ -55,59 +55,63 @@ function langUrl(string $target): string
  *
  * Block types:
  *   ['type' => 'row',     'item' => KEY, 'price' => '30€', 'mins' => 60]
+ *                         ('buy' => 'URL' adds a "Buy" button linking to that URL;
+ *                          the item may also show a benefit tooltip from 'tips'.)
  *   ['type' => 'section', 'section' => KEY]
  *   ['type' => 'desc',    'desc' => KEY]
  * ===================================================================== */
 $catalog = [
     'bem-estar' => [
         'tax'    => 'tax_note_wellness',
+        'legend' => 'vat_legend_wellness',
         'blocks' => [
-            ['type' => 'row', 'item' => 'item_circuito_thalasso', 'price' => '30€', 'mins' => 60],
+            ['type' => 'row', 'item' => 'item_circuito_thalasso', 'price' => '30€', 'mins' => 60, 'buy' => 'https://www.nazareonline.com/product/portugal-nazare-thalasso-spa-thalassoterapia-circuito-piscina-thalasso'],
             ['type' => 'row', 'item' => 'item_pack_3_circuitos', 'price' => '85,50€'],
             ['type' => 'row', 'item' => 'item_pack_5_circuitos', 'price' => '138,75€'],
             ['type' => 'row', 'item' => 'item_pack_10_circuitos', 'price' => '270€'],
-            ['type' => 'row', 'item' => 'item_thalasso_experience', 'price' => '67€', 'mins' => 120],
+            ['type' => 'row', 'item' => 'item_thalasso_experience', 'price' => '67€', 'mins' => 120, 'buy' => 'https://www.nazareonline.com/product/thalasso-experience'],
             ['type' => 'section', 'section' => 'section_balneoterapia'],
-            ['type' => 'row', 'item' => 'item_duche_vichy_massagem', 'price' => '42€', 'mins' => 25],
-            ['type' => 'row', 'item' => 'item_hidromassagem_banheira', 'price' => '35€', 'mins' => 15],
-            ['type' => 'row', 'item' => 'item_hidromassagem_algas', 'price' => '40€', 'mins' => 15],
-            ['type' => 'row', 'item' => 'item_thalaxion', 'price' => '35€', 'mins' => 20],
-            ['type' => 'row', 'item' => 'item_phlebotone', 'price' => '26€', 'mins' => 15],
+            ['type' => 'row', 'item' => 'item_duche_vichy_massagem', 'price' => '42€', 'mins' => 25, 'buy' => 'https://www.nazareonline.com/product/duche-vichy-massagem-completa'],
+            ['type' => 'row', 'item' => 'item_hidromassagem_banheira', 'price' => '35€', 'mins' => 15, 'buy' => 'https://www.nazareonline.com/product/hidromassagem-banheira-individual'],
+            ['type' => 'row', 'item' => 'item_hidromassagem_algas', 'price' => '40€', 'mins' => 15, 'buy' => 'https://www.nazareonline.com/product/hidromassagem-banheira-individual-algas'],
+            ['type' => 'row', 'item' => 'item_thalaxion', 'price' => '35€', 'mins' => 20, 'buy' => 'https://www.nazareonline.com/product/thalaxion'],
+            ['type' => 'row', 'item' => 'item_phlebotone', 'price' => '26€', 'mins' => 15, 'buy' => 'https://www.nazareonline.com/product/phlebotone'],
             ['type' => 'section', 'section' => 'section_terapia_respiratoria'],
             ['type' => 'desc', 'desc' => 'desc_terapia_respiratoria'],
             ['type' => 'row', 'item' => 'item_pack_3_terapia_respiratoria', 'price' => '45€'],
             ['type' => 'section', 'section' => 'section_massagens'],
-            ['type' => 'row', 'item' => 'item_massagem_localizada', 'price' => '40€', 'mins' => 30],
-            ['type' => 'row', 'item' => 'item_massagem_relaxamento_40', 'price' => '50€', 'mins' => 40],
-            ['type' => 'row', 'item' => 'item_massagem_relaxamento_60', 'price' => '65€', 'mins' => 60],
-            ['type' => 'row', 'item' => 'item_massagem_casal', 'price' => '110€', 'mins' => 60],
+            ['type' => 'row', 'item' => 'item_massagem_localizada', 'price' => '40€', 'mins' => 30, 'buy' => 'https://www.nazareonline.com/product/massagem-localizada'],
+            ['type' => 'row', 'item' => 'item_massagem_relaxamento_40', 'price' => '50€', 'mins' => 40, 'buy' => 'https://www.nazareonline.com/product/massagem-relaxamento-corporal?option=4805709'],
+            ['type' => 'row', 'item' => 'item_massagem_relaxamento_60', 'price' => '65€', 'mins' => 60, 'buy' => 'https://www.nazareonline.com/product/massagem-relaxamento-corporal?option=4805710'],
+            ['type' => 'row', 'item' => 'item_massagem_casal', 'price' => '110€', 'mins' => 60, 'buy' => 'https://www.nazareonline.com/product/massagem-relaxamento-casal'],
             ['type' => 'row', 'item' => 'item_massagem_terapeutica', 'price' => '45€', 'mins' => 30],
-            ['type' => 'row', 'item' => 'item_drenagem_linfatica', 'price' => '65€', 'mins' => 60],
+            ['type' => 'row', 'item' => 'item_drenagem_linfatica', 'price' => '65€', 'mins' => 60, 'buy' => 'https://www.nazareonline.com/product/drenagem-linfatica-manual'],
             ['type' => 'section', 'section' => 'section_tratamentos_corporais'],
-            ['type' => 'row', 'item' => 'item_envolvimento_algas', 'price' => '67€'],
-            ['type' => 'row', 'item' => 'item_envolvimento_lamas', 'price' => '67€'],
-            ['type' => 'row', 'item' => 'item_envolvimento_drenante', 'price' => '55€'],
+            ['type' => 'row', 'item' => 'item_envolvimento_algas', 'price' => '67€', 'buy' => 'https://www.nazareonline.com/product/envolvimento-corporal?option=4776428'],
+            ['type' => 'row', 'item' => 'item_envolvimento_lamas', 'price' => '67€', 'buy' => 'https://www.nazareonline.com/product/envolvimento-corporal?option=4776429'],
+            ['type' => 'row', 'item' => 'item_envolvimento_drenante', 'price' => '55€', 'buy' => 'https://www.nazareonline.com/product/envolvimento-drenante-extratos-marinhos'],
             ['type' => 'row', 'item' => 'item_envolvimento_redutor', 'price' => '69€'],
             ['type' => 'row', 'item' => 'item_envolvimento_crioterapia', 'price' => '61€'],
-            ['type' => 'row', 'item' => 'item_esfoliacao_sal_marinho', 'price' => '39€'],
+            ['type' => 'row', 'item' => 'item_esfoliacao_sal_marinho', 'price' => '39€', 'buy' => 'https://www.nazareonline.com/product/esfoliacao-sal-marinho'],
             ['type' => 'row', 'item' => 'item_esfoliacao_geleia_aquatica', 'price' => '39€'],
-            ['type' => 'row', 'item' => 'item_esfoliacao_lamas_sais', 'price' => '62€'],
-            ['type' => 'row', 'item' => 'item_tratamento_pes_pernas', 'price' => '49€'],
+            ['type' => 'row', 'item' => 'item_esfoliacao_lamas_sais', 'price' => '62€', 'buy' => 'https://www.nazareonline.com/product/esfoliacao-lamas-sais-marinhos'],
+            ['type' => 'row', 'item' => 'item_tratamento_pes_pernas', 'price' => '49€', 'buy' => 'https://www.nazareonline.com/product/tratamento-pes-pernas-banho-esfoliacao-massagem'],
             ['type' => 'section', 'section' => 'section_tratamentos_faciais'],
-            ['type' => 'row', 'item' => 'item_mini_facial_hidratante', 'price' => '45€'],
-            ['type' => 'row', 'item' => 'item_limpeza_pele', 'price' => '70€'],
+            ['type' => 'row', 'item' => 'item_mini_facial_hidratante', 'price' => '45€', 'buy' => 'https://www.nazareonline.com/product/mini-facial-hidratante'],
+            ['type' => 'row', 'item' => 'item_limpeza_pele', 'price' => '70€', 'buy' => 'https://www.nazareonline.com/product/limpeza-pele-extracao'],
             ['type' => 'row', 'item' => 'item_facial_desintoxicante_algas', 'price' => '80€'],
-            ['type' => 'row', 'item' => 'item_facial_personalizado', 'price' => '95€'],
+            ['type' => 'row', 'item' => 'item_facial_personalizado', 'price' => '95€', 'buy' => 'https://www.nazareonline.com/product/tratamento-rosto-personalizado'],
             ['type' => 'section', 'section' => 'section_rituais'],
-            ['type' => 'row', 'item' => 'item_ritual_polinesia', 'price' => '115€'],
-            ['type' => 'row', 'item' => 'item_renaissance', 'price' => '70€'],
+            ['type' => 'row', 'item' => 'item_ritual_polinesia', 'price' => '115€', 'buy' => 'https://www.nazareonline.com/product/ritual-thalasso-anti-stress-polinesia-esfoliacao-hidromassagem-massagem-corporal'],
+            ['type' => 'row', 'item' => 'item_renaissance', 'price' => '70€', 'buy' => 'https://www.nazareonline.com/product/ritual-renaissance-aguas-primordiais'],
             ['type' => 'row', 'item' => 'item_oceano_profundo_120', 'price' => '115€'],
-            ['type' => 'row', 'item' => 'item_oceano_profundo_90', 'price' => '85€'],
-            ['type' => 'row', 'item' => 'item_pure_relax_homem', 'price' => '85€'],
+            ['type' => 'row', 'item' => 'item_oceano_profundo_90', 'price' => '85€', 'buy' => 'https://www.nazareonline.com/product/oceano-profundo-esfoliacao-massagem-tematica'],
+            ['type' => 'row', 'item' => 'item_pure_relax_homem', 'price' => '85€', 'buy' => 'https://www.nazareonline.com/product/pure-relax-homem-esfoliacao-massagem-tematica'],
         ],
     ],
     'cura' => [
         'tax'    => 'tax_note_cure',
+        'legend' => 'vat_legend_cure',
         'blocks' => [
             ['type' => 'section', 'section' => 'section_hidroterapia'],
             ['type' => 'row', 'item' => 'item_hidrocinesio_individual_60', 'price' => '25,85€'],
@@ -159,6 +163,13 @@ $catalog = [
 
 function renderPanel(array $panel, array $t): void
 {
+    echo '<div class="vat-legend">' . "\n";
+    echo '  <svg class="vat-legend__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">' . "\n";
+    echo '    <circle cx="12" cy="12" r="8.5"></circle>' . "\n";
+    echo '    <path d="M12 11v5M12 8v.01"></path>' . "\n";
+    echo '  </svg>' . "\n";
+    echo '  <p>', e($t['ui'][$panel['legend']]), "</p>\n";
+    echo "</div>\n";
     echo '<p class="price-tax-note">', e($t['ui'][$panel['tax']]), "</p>\n";
 
     foreach ($panel['blocks'] as $block) {
@@ -178,9 +189,21 @@ function renderPanel(array $panel, array $t): void
 
             case 'row':
                 $item = $t['items'][$block['item']];
+                $tip = $t['tips'][$block['item']] ?? null;
                 echo "<div class=\"price-row\">\n";
                 echo "  <div>\n";
-                echo '    <div class="item-name">', e($item['name']), "</div>\n";
+                echo '    <div class="item-name">', e($item['name']);
+                if ($tip) {
+                    echo "\n      <span class=\"service-tip\" tabindex=\"0\" role=\"button\" aria-label=\"" . e($tip) . "\">\n";
+                    echo '        <svg class="service-tip__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">' . "\n";
+                    echo '          <circle cx="12" cy="12" r="10"></circle>' . "\n";
+                    echo '          <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>' . "\n";
+                    echo '          <line x1="12" y1="17" x2="12.01" y2="17"></line>' . "\n";
+                    echo '        </svg>' . "\n";
+                    echo '        <span class="service-tip__bubble" role="tooltip">' . e($tip) . "</span>\n";
+                    echo "      </span>\n";
+                }
+                echo "    </div>\n";
                 if (isset($item['duration'])) {
                     $titleAttr = isset($block['mins'])
                         ? ' title="' . e(sprintf($t['ui']['duration_title'], $block['mins'])) . '"'
@@ -191,7 +214,23 @@ function renderPanel(array $panel, array $t): void
                     echo '    <div class="item-desc">', e($item['desc']), "</div>\n";
                 }
                 echo "  </div>\n";
-                echo '  <div class="item-price">', e($block['price']), "</div>\n";
+                if (!empty($block['buy'])) {
+                    echo "  <div class=\"price-side\">\n";
+                    if (isset($block['price'])) {
+                        echo '    <div class="item-price">', e($block['price']), "</div>\n";
+                    }
+                    echo '    <a class="buy-button" href="', e($block['buy']), '" target="_blank" rel="noopener">' . "\n";
+                    echo '      <svg class="buy-button__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">' . "\n";
+                    echo '        <circle cx="9" cy="21" r="1"></circle>' . "\n";
+                    echo '        <circle cx="20" cy="21" r="1"></circle>' . "\n";
+                    echo '        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>' . "\n";
+                    echo '      </svg>' . "\n";
+                    echo '      ', e($t['ui']['buy_button']), "\n";
+                    echo "    </a>\n";
+                    echo "  </div>\n";
+                } elseif (isset($block['price'])) {
+                    echo '  <div class="item-price">', e($block['price']), "</div>\n";
+                }
                 echo "</div>\n";
                 break;
         }

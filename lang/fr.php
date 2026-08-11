@@ -17,10 +17,13 @@ return [
         'toggle_cure'      => 'Cure',
         'tax_note_wellness' => 'Prix TTC au taux légal de 23 %.',
         'tax_note_cure'     => 'Prix TTC au taux légal de 6 %.',
+        'vat_legend_wellness' => 'Les prix avec TVA à 23 % concernent les services de bien-être et de relaxation.',
+        'vat_legend_cure'     => 'Les prix avec TVA à 6 % concernent les services à caractère thérapeutique, sur prescription médicale (au titre de l\'article 9 du CIVA).',
         'logo_alt'          => 'Thalasso Nazaré - Le soin qui vient de la mer.',
         'footer_tagline'    => 'Centre de Thalassothérapie',
         'back_to_top'       => 'Retour en haut',
         'duration_title'    => 'Durée approximative : %d minutes',
+        'buy_button'        => 'Acheter',
     ],
 
     /* --- Titres de section (bandeaux gris) --- */
@@ -42,6 +45,20 @@ return [
     /* --- Descriptions isolées (hors lignes de prix) --- */
     'descs' => [
         'desc_terapia_respiratoria' => 'Inhalation, nébulisation ou aérosol.',
+    ],
+
+    /* --- Bienfaits (infobulles des services techniques) --- */
+    'tips' => [
+        'item_thalaxion'               => 'Stimule la circulation sanguine et soulage les tensions musculaires grâce à des jets d\'eau pressurisés.',
+        'item_thalaxion_cura'          => 'Stimule la circulation sanguine et soulage les tensions musculaires grâce à des jets d\'eau pressurisés.',
+        'item_phlebotone'              => 'Traitement pour les jambes fatiguées et la mauvaise circulation, à effet tonifiant et drainant.',
+        'item_phlebotone_cura'         => 'Traitement pour les jambes fatiguées et la mauvaise circulation, à effet tonifiant et drainant.',
+        'item_duche_subaquatico'       => 'Massage aux jets d\'eau tiède appliqués directement sur le corps, idéal contre les douleurs musculaires.',
+        'item_hidromassagem_banheira'  => 'Relaxation profonde dans un bain individuel à hydromassage, qui soulage les tensions musculaires et combat le stress.',
+        'item_hidromassagem_banheira_cura' => 'Relaxation profonde dans un bain individuel à hydromassage, qui soulage les tensions musculaires et combat le stress.',
+        'item_hidromassagem_algas'     => 'Allie l\'action relaxante des jets aux propriétés reminéralisantes des algues marines.',
+        'item_hidromassagem_algas_cura' => 'Allie l\'action relaxante des jets aux propriétés reminéralisantes des algues marines.',
+        'item_hidrocinesio_individual_60' => 'Thérapie en piscine d\'eau thermale qui facilite le mouvement et renforce les muscles, utile en rééducation.',
     ],
 
     /* --- Lignes de service (nom, durée, description) --- */

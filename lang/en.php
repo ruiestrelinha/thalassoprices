@@ -17,10 +17,13 @@ return [
         'toggle_cure'      => 'Cure',
         'tax_note_wellness' => 'Prices include VAT at the legal rate of 23%.',
         'tax_note_cure'     => 'Prices include VAT at the legal rate of 6%.',
+        'vat_legend_wellness' => 'Prices with 23% VAT apply to wellness and relaxation services.',
+        'vat_legend_cure'     => 'Prices with 6% VAT apply to therapeutic services, subject to a medical prescription (under Article 9 of the CIVA).',
         'logo_alt'          => 'Thalasso Nazaré - The cure that comes from the sea.',
         'footer_tagline'    => 'Thalassotherapy Centre',
         'back_to_top'       => 'Back to top',
         'duration_title'    => 'Approximate duration: %d minutes',
+        'buy_button'        => 'Buy',
     ],
 
     /* --- Section titles (grey bands) --- */
@@ -42,6 +45,20 @@ return [
     /* --- Standalone descriptions (outside price rows) --- */
     'descs' => [
         'desc_terapia_respiratoria' => 'Nasal shower, nebulisation or aerosol.',
+    ],
+
+    /* --- Benefits (tooltips for technical services) --- */
+    'tips' => [
+        'item_thalaxion'               => 'Stimulates blood circulation and relieves muscle tension through pressurised water jets.',
+        'item_thalaxion_cura'          => 'Stimulates blood circulation and relieves muscle tension through pressurised water jets.',
+        'item_phlebotone'              => 'Treatment for tired legs and poor circulation, with a toning and draining effect.',
+        'item_phlebotone_cura'         => 'Treatment for tired legs and poor circulation, with a toning and draining effect.',
+        'item_duche_subaquatico'       => 'Massage with jets of warm water applied directly to the body, ideal for muscle pain.',
+        'item_hidromassagem_banheira'  => 'Deep relaxation in a private hydro-massage bath that relieves muscle tension and combats stress.',
+        'item_hidromassagem_banheira_cura' => 'Deep relaxation in a private hydro-massage bath that relieves muscle tension and combats stress.',
+        'item_hidromassagem_algas'     => 'Combines the relaxing effect of the jets with the remineralising properties of sea algae.',
+        'item_hidromassagem_algas_cura' => 'Combines the relaxing effect of the jets with the remineralising properties of sea algae.',
+        'item_hidrocinesio_individual_60' => 'Therapy in a thermal water pool that eases movement and strengthens muscles, useful in rehabilitation.',
     ],
 
     /* --- Service rows (name, duration, description) --- */

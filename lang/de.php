@@ -17,10 +17,13 @@ return [
         'toggle_cure'      => 'Heilung',
         'tax_note_wellness' => 'Preise inkl. MwSt. zum gesetzlichen Satz von 23 %.',
         'tax_note_cure'     => 'Preise inkl. MwSt. zum gesetzlichen Satz von 6 %.',
+        'vat_legend_wellness' => 'Die Preise mit 23 % MwSt. gelten für Wellness- und Entspannungsdienstleistungen.',
+        'vat_legend_cure'     => 'Die Preise mit 6 % MwSt. gelten für therapeutische Leistungen auf ärztliche Verordnung (gemäß Artikel 9 des CIVA).',
         'logo_alt'          => 'Thalasso Nazaré - Die Heilung aus dem Meer.',
         'footer_tagline'    => 'Zentrum für Thalassotherapie',
         'back_to_top'       => 'Nach oben',
         'duration_title'    => 'Ungefähre Dauer: %d Minuten',
+        'buy_button'        => 'Kaufen',
     ],
 
     /* --- Abschnittstitel (graue Bänder) --- */
@@ -42,6 +45,20 @@ return [
     /* --- Eigenständige Beschreibungen (ausserhalb der Preiszeilen) --- */
     'descs' => [
         'desc_terapia_respiratoria' => 'Nasendusche, Vernebelung und Aerosol.',
+    ],
+
+    /* --- Vorteile (Tooltips für technische Dienstleistungen) --- */
+    'tips' => [
+        'item_thalaxion'               => 'Regt die Blutzirkulation an und löst Muskelverspannungen durch Druckwasserstrahlen.',
+        'item_thalaxion_cura'          => 'Regt die Blutzirkulation an und löst Muskelverspannungen durch Druckwasserstrahlen.',
+        'item_phlebotone'              => 'Behandlung für müde Beine und schlechte Durchblutung mit straffender und entwässernder Wirkung.',
+        'item_phlebotone_cura'         => 'Behandlung für müde Beine und schlechte Durchblutung mit straffender und entwässernder Wirkung.',
+        'item_duche_subaquatico'       => 'Massage mit warmen Wasserstrahlen direkt auf den Körper, ideal bei Muskelschmerzen.',
+        'item_hidromassagem_banheira'  => 'Tiefenentspannung in einem Einzel-Whirlpool, der Muskelverspannungen löst und Stress abbaut.',
+        'item_hidromassagem_banheira_cura' => 'Tiefenentspannung in einem Einzel-Whirlpool, der Muskelverspannungen löst und Stress abbaut.',
+        'item_hidromassagem_algas'     => 'Verbindet die entspannende Wirkung der Strahlen mit den remineralisierenden Eigenschaften der Meeresalgen.',
+        'item_hidromassagem_algas_cura' => 'Verbindet die entspannende Wirkung der Strahlen mit den remineralisierenden Eigenschaften der Meeresalgen.',
+        'item_hidrocinesio_individual_60' => 'Therapie in einem Thermalwasserbecken, die die Bewegung erleichtert und die Muskeln stärkt – nützlich in der Rehabilitation.',
     ],
 
     /* --- Servicezeilen (Name, Dauer, Beschreibung) --- */
