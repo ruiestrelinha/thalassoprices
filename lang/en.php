@@ -49,16 +49,16 @@ return [
 
     /* --- Benefits (tooltips for technical services) --- */
     'tips' => [
-        'item_thalaxion'               => 'Stimulates blood circulation and relieves muscle tension through pressurised water jets.',
-        'item_thalaxion_cura'          => 'Stimulates blood circulation and relieves muscle tension through pressurised water jets.',
-        'item_phlebotone'              => 'Treatment for tired legs and poor circulation, with a toning and draining effect.',
-        'item_phlebotone_cura'         => 'Treatment for tired legs and poor circulation, with a toning and draining effect.',
-        'item_duche_subaquatico'       => 'Massage with jets of warm water applied directly to the body, ideal for muscle pain.',
-        'item_hidromassagem_banheira'  => 'Deep relaxation in a private hydro-massage bath that relieves muscle tension and combats stress.',
-        'item_hidromassagem_banheira_cura' => 'Deep relaxation in a private hydro-massage bath that relieves muscle tension and combats stress.',
-        'item_hidromassagem_algas'     => 'Combines the relaxing effect of the jets with the remineralising properties of sea algae.',
-        'item_hidromassagem_algas_cura' => 'Combines the relaxing effect of the jets with the remineralising properties of sea algae.',
-        'item_hidrocinesio_individual_60' => 'Therapy in a thermal water pool that eases movement and strengthens muscles, useful in rehabilitation.',
+        'item_thalaxion'               => 'Partially covered bath in which jets are directed sequentially at the abdomen, thighs and legs at varying pressures and temperatures. Effect: stimulates venous blood circulation, veno-lymphatic drainage and reduces swelling.',
+        'item_thalaxion_cura'          => 'Partially covered bath in which jets are directed sequentially at the abdomen, thighs and legs at varying pressures and temperatures. Effect: stimulates venous blood circulation, veno-lymphatic drainage and reduces swelling.',
+        'item_phlebotone'              => 'Tub for soaking the feet and legs in a simple bath or with air bubbles, alternating between warm and cold sea water. Relaxing, toning and anti-inflammatory effect that also activates blood circulation.',
+        'item_phlebotone_cura'         => 'Tub for soaking the feet and legs in a simple bath or with air bubbles, alternating between warm and cold sea water. Relaxing, toning and anti-inflammatory effect that also activates blood circulation.',
+        'item_duche_subaquatico'       => 'Manual hydro-massage in a bath, applied as a jet directed at a specific area or joint of the body. Provides a relaxing effect and locally activates circulation.',
+        'item_hidromassagem_banheira'  => 'Performed in a bath of sea water (36–38 ºC), the client receives an alternating massage of the lower limbs, spine, pelvis and shoulder area through fine pressurised water jets combined with a swirl of air bubbles. Effects: muscle relaxation, tissue toning, penetration of trace elements, vasodilation.',
+        'item_hidromassagem_banheira_cura' => 'Performed in a bath of sea water (36–38 ºC), the client receives an alternating massage of the lower limbs, spine, pelvis and shoulder area through fine pressurised water jets combined with a swirl of air bubbles. Effects: muscle relaxation, tissue toning, penetration of trace elements, vasodilation.',
+        'item_hidromassagem_algas'     => 'Immersive bath in warm sea water with added micro-fragmented (powdered) algae which, through jets directed sequentially at different parts of the body, improves blood circulation, relaxes the muscles, remineralises tissues and hydrates the skin.',
+        'item_hidromassagem_algas_cura' => 'Immersive bath in warm sea water with added micro-fragmented (powdered) algae which, through jets directed sequentially at different parts of the body, improves blood circulation, relaxes the muscles, remineralises tissues and hydrates the skin.',
+        'item_hidrocinesio_individual_60' => 'Dynamic pool with heated sea water, counter-current, walking lane, Turkish bath, contrast showers, ice fountain and relaxation.',
     ],
 
     /* --- Service rows (name, duration, description) --- */

@@ -49,16 +49,16 @@ return [
 
     /* --- Beneficios (tooltips de servicios técnicos) --- */
     'tips' => [
-        'item_thalaxion'               => 'Estimula la circulación sanguínea y alivia las tensiones musculares mediante chorros de agua presurizada.',
-        'item_thalaxion_cura'          => 'Estimula la circulación sanguínea y alivia las tensiones musculares mediante chorros de agua presurizada.',
-        'item_phlebotone'              => 'Tratamiento para piernas cansadas y mala circulación, con efecto tonificante y drenante.',
-        'item_phlebotone_cura'         => 'Tratamiento para piernas cansadas y mala circulación, con efecto tonificante y drenante.',
-        'item_duche_subaquatico'       => 'Masaje con chorros de agua templada aplicados directamente sobre el cuerpo, ideal para dolores musculares.',
-        'item_hidromassagem_banheira'  => 'Relajación profunda en un baño individual de hidromasaje, que alivia las tensiones musculares y combate el estrés.',
-        'item_hidromassagem_banheira_cura' => 'Relajación profunda en un baño individual de hidromasaje, que alivia las tensiones musculares y combate el estrés.',
-        'item_hidromassagem_algas'     => 'Combina la acción relajante de los chorros con las propiedades remineralizantes de las algas marinas.',
-        'item_hidromassagem_algas_cura' => 'Combina la acción relajante de los chorros con las propiedades remineralizantes de las algas marinas.',
-        'item_hidrocinesio_individual_60' => 'Terapia en piscina de agua termal que facilita el movimiento y fortalece los músculos, útil en rehabilitación.',
+        'item_thalaxion'               => 'Bañera parcialmente cubierta en la que los chorros se dirigen secuencialmente al abdomen, los muslos y las piernas, a presiones y temperaturas variables. Efecto: activa la circulación sanguínea venosa, drenaje venolinfático y antiedema.',
+        'item_thalaxion_cura'          => 'Bañera parcialmente cubierta en la que los chorros se dirigen secuencialmente al abdomen, los muslos y las piernas, a presiones y temperaturas variables. Efecto: activa la circulación sanguínea venosa, drenaje venolinfático y antiedema.',
+        'item_phlebotone'              => 'Tina para sumergir los pies y las piernas en un baño simple o con burbujas de aire, alternando agua de mar caliente y fría. Efecto relajante, tonificante, antiinflamatorio y activador de la circulación sanguínea.',
+        'item_phlebotone_cura'         => 'Tina para sumergir los pies y las piernas en un baño simple o con burbujas de aire, alternando agua de mar caliente y fría. Efecto relajante, tonificante, antiinflamatorio y activador de la circulación sanguínea.',
+        'item_duche_subaquatico'       => 'Hidromasaje manual en bañera, realizado a chorro y dirigido a una región o articulación concreta del cuerpo. Proporciona un efecto relajante y activa localmente la circulación.',
+        'item_hidromassagem_banheira'  => 'Realizado en una bañera con agua de mar (36–38 ºC), el cliente recibe un masaje alterno de los miembros inferiores, la columna, la pelvis y la región escapular mediante finos chorros de agua a presión, asociados a una emulsión de burbujas de aire. Efectos: relajación muscular, tonificación de los tejidos, penetración de oligoelementos, vasodilatación.',
+        'item_hidromassagem_banheira_cura' => 'Realizado en una bañera con agua de mar (36–38 ºC), el cliente recibe un masaje alterno de los miembros inferiores, la columna, la pelvis y la región escapular mediante finos chorros de agua a presión, asociados a una emulsión de burbujas de aire. Efectos: relajación muscular, tonificación de los tejidos, penetración de oligoelementos, vasodilatación.',
+        'item_hidromassagem_algas'     => 'Baño de inmersión en agua de mar caliente a la que se añaden algas microfragmentadas (en polvo) y que, mediante chorros dirigidos secuencialmente a distintas partes del cuerpo, favorece la circulación sanguínea, relaja los músculos, remineraliza los tejidos e hidrata la piel.',
+        'item_hidromassagem_algas_cura' => 'Baño de inmersión en agua de mar caliente a la que se añaden algas microfragmentadas (en polvo) y que, mediante chorros dirigidos secuencialmente a distintas partes del cuerpo, favorece la circulación sanguínea, relaja los músculos, remineraliza los tejidos e hidrata la piel.',
+        'item_hidrocinesio_individual_60' => 'Piscina dinámica con agua de mar caliente, contracorriente, pasillo de marcha, baño turco, duchas de contraste, fuente de hielo y relajación.',
     ],
 
     /* --- Líneas de servicio (nombre, duración, descripción) --- */

@@ -49,16 +49,16 @@ return [
 
     /* --- Bienfaits (infobulles des services techniques) --- */
     'tips' => [
-        'item_thalaxion'               => 'Stimule la circulation sanguine et soulage les tensions musculaires grâce à des jets d\'eau pressurisés.',
-        'item_thalaxion_cura'          => 'Stimule la circulation sanguine et soulage les tensions musculaires grâce à des jets d\'eau pressurisés.',
-        'item_phlebotone'              => 'Traitement pour les jambes fatiguées et la mauvaise circulation, à effet tonifiant et drainant.',
-        'item_phlebotone_cura'         => 'Traitement pour les jambes fatiguées et la mauvaise circulation, à effet tonifiant et drainant.',
-        'item_duche_subaquatico'       => 'Massage aux jets d\'eau tiède appliqués directement sur le corps, idéal contre les douleurs musculaires.',
-        'item_hidromassagem_banheira'  => 'Relaxation profonde dans un bain individuel à hydromassage, qui soulage les tensions musculaires et combat le stress.',
-        'item_hidromassagem_banheira_cura' => 'Relaxation profonde dans un bain individuel à hydromassage, qui soulage les tensions musculaires et combat le stress.',
-        'item_hidromassagem_algas'     => 'Allie l\'action relaxante des jets aux propriétés reminéralisantes des algues marines.',
-        'item_hidromassagem_algas_cura' => 'Allie l\'action relaxante des jets aux propriétés reminéralisantes des algues marines.',
-        'item_hidrocinesio_individual_60' => 'Thérapie en piscine d\'eau thermale qui facilite le mouvement et renforce les muscles, utile en rééducation.',
+        'item_thalaxion'               => 'Baignoire partiellement couverte dans laquelle des jets sont dirigés successivement sur l\'abdomen, les cuisses et les jambes, à des pressions et des températures variables. Effet : active la circulation sanguine veineuse, drainage veinolymphatique et anti-œdème.',
+        'item_thalaxion_cura'          => 'Baignoire partiellement couverte dans laquelle des jets sont dirigés successivement sur l\'abdomen, les cuisses et les jambes, à des pressions et des températures variables. Effet : active la circulation sanguine veineuse, drainage veinolymphatique et anti-œdème.',
+        'item_phlebotone'              => 'Bac d\'immersion des pieds et des jambes dans un bain simple ou à bulles d\'air, alternant eau de mer chaude et froide. Effet relaxant, tonifiant, anti-inflammatoire et activateur de la circulation sanguine.',
+        'item_phlebotone_cura'         => 'Bac d\'immersion des pieds et des jambes dans un bain simple ou à bulles d\'air, alternant eau de mer chaude et froide. Effet relaxant, tonifiant, anti-inflammatoire et activateur de la circulation sanguine.',
+        'item_duche_subaquatico'       => 'Hydromassage manuel en baignoire, réalisé par jet et dirigé vers une région ou une articulation précise du corps. Procure un effet relaxant et active localement la circulation.',
+        'item_hidromassagem_banheira'  => 'Réalisé en baignoire d\'eau de mer (36–38 ºC), le client reçoit un massage alterné des membres inférieurs, de la colonne vertébrale, du bassin et de la région scapulaire, par de fins jets d\'eau sous pression, associés à une émulsion de bulles d\'air. Effets : décontraction musculaire, tonicité des tissus, pénétration des oligoéléments, vasodilatation.',
+        'item_hidromassagem_banheira_cura' => 'Réalisé en baignoire d\'eau de mer (36–38 ºC), le client reçoit un massage alterné des membres inférieurs, de la colonne vertébrale, du bassin et de la région scapulaire, par de fins jets d\'eau sous pression, associés à une émulsion de bulles d\'air. Effets : décontraction musculaire, tonicité des tissus, pénétration des oligoéléments, vasodilatation.',
+        'item_hidromassagem_algas'     => 'Bain d\'immersion dans de l\'eau de mer chaude additionnée d\'algues microfragmentées (en poudre), qui, par des jets dirigés successivement vers différentes parties du corps, favorise la circulation sanguine, détend les muscles, reminéralise les tissus et hydrate la peau.',
+        'item_hidromassagem_algas_cura' => 'Bain d\'immersion dans de l\'eau de mer chaude additionnée d\'algues microfragmentées (en poudre), qui, par des jets dirigés successivement vers différentes parties du corps, favorise la circulation sanguine, détend les muscles, reminéralise les tissus et hydrate la peau.',
+        'item_hidrocinesio_individual_60' => 'Piscine dynamique à eau de mer chauffée, contre-courant, couloir de marche, bain turc, douches à contraste, fontaine de glace et relaxation.',
     ],
 
     /* --- Lignes de service (nom, durée, description) --- */

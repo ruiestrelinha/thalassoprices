@@ -221,9 +221,13 @@ function renderPanel(array $panel, array $t): void
                     }
                     echo '    <a class="buy-button" href="', e($block['buy']), '" target="_blank" rel="noopener">' . "\n";
                     echo '      <svg class="buy-button__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">' . "\n";
-                    echo '        <circle cx="9" cy="21" r="1"></circle>' . "\n";
-                    echo '        <circle cx="20" cy="21" r="1"></circle>' . "\n";
-                    echo '        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>' . "\n";
+                    echo '        <path d="m5 11 4-7"></path>' . "\n";
+                    echo '        <path d="m19 11-4-7"></path>' . "\n";
+                    echo '        <path d="M2 11h20"></path>' . "\n";
+                    echo '        <path d="m3.5 11 1.6 7.4a2 2 0 0 0 2 1.6h9.8a2 2 0 0 0 2-1.6l1.7-7.4"></path>' . "\n";
+                    echo '        <path d="M4.5 15.5h15"></path>' . "\n";
+                    echo '        <path d="m9 11 1 5"></path>' . "\n";
+                    echo '        <path d="m15 11-1 5"></path>' . "\n";
                     echo '      </svg>' . "\n";
                     echo '      ', e($t['ui']['buy_button']), "\n";
                     echo "    </a>\n";
@@ -323,7 +327,7 @@ function renderPanel(array $panel, array $t): void
             <svg class="footer-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path>
             </svg>
-            (+351) 262 560 450
+            <a href="tel:00351262560450">(+351) 262 560 450</a>
         </p>
         <p class="footer-contact">
             <svg class="footer-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -342,9 +346,13 @@ function renderPanel(array $panel, array $t): void
         </p>
         <p class="footer-contact">
             <svg class="footer-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                <circle cx="9" cy="21" r="1"></circle>
-                <circle cx="20" cy="21" r="1"></circle>
-                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                <path d="m5 11 4-7"></path>
+                <path d="m19 11-4-7"></path>
+                <path d="M2 11h20"></path>
+                <path d="m3.5 11 1.6 7.4a2 2 0 0 0 2 1.6h9.8a2 2 0 0 0 2-1.6l1.7-7.4"></path>
+                <path d="M4.5 15.5h15"></path>
+                <path d="m9 11 1 5"></path>
+                <path d="m15 11-1 5"></path>
             </svg>
             <a href="https://www.nazareonline.com" target="_blank" rel="noopener">www.nazareonline.com</a>
         </p>

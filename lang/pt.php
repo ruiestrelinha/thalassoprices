@@ -49,16 +49,16 @@ return [
 
     /* --- Benefícios (tooltips de serviços técnicos) --- */
     'tips' => [
-        'item_thalaxion'               => 'Estimula a circulação sanguínea e alivia tensões musculares através de jatos de água pressurizados.',
-        'item_thalaxion_cura'          => 'Estimula a circulação sanguínea e alivia tensões musculares através de jatos de água pressurizados.',
-        'item_phlebotone'              => 'Tratamento para pernas cansadas e má circulação, com efeito tonificante e drenante.',
-        'item_phlebotone_cura'         => 'Tratamento para pernas cansadas e má circulação, com efeito tonificante e drenante.',
-        'item_duche_subaquatico'       => 'Massagem com jatos de água morna aplicados diretamente sobre o corpo, ideal para dores musculares.',
-        'item_hidromassagem_banheira'  => 'Relaxamento profundo num banho individual de hidromassagem que alivia tensões e combate o stress.',
-        'item_hidromassagem_banheira_cura' => 'Relaxamento profundo num banho individual de hidromassagem que alivia tensões e combate o stress.',
-        'item_hidromassagem_algas'     => 'Combina a ação relaxante dos jatos com as propriedades remineralizantes das algas marinhas.',
-        'item_hidromassagem_algas_cura' => 'Combina a ação relaxante dos jatos com as propriedades remineralizantes das algas marinhas.',
-        'item_hidrocinesio_individual_60' => 'Terapia em piscina de água termal que facilita o movimento e fortalece os músculos, útil em reabilitação.',
+        'item_thalaxion'               => 'Banheira parcialmente coberta em que os jatos são dirigidos à região do abdómen, coxas e pernas sequencialmente, em pressões e temperaturas variáveis. Efeito: ativador da circulação sanguínea venosa, drenagem veno-linfática e anti-edema.',
+        'item_thalaxion_cura'          => 'Banheira parcialmente coberta em que os jatos são dirigidos à região do abdómen, coxas e pernas sequencialmente, em pressões e temperaturas variáveis. Efeito: ativador da circulação sanguínea venosa, drenagem veno-linfática e anti-edema.',
+        'item_phlebotone'              => 'Tina para imersão dos pés e das pernas num banho simples ou com bolha de ar, alternadamente em água do mar quente e fria. Efeito relaxante, tonificante, anti-inflamatório e ativador da circulação sanguínea.',
+        'item_phlebotone_cura'         => 'Tina para imersão dos pés e das pernas num banho simples ou com bolha de ar, alternadamente em água do mar quente e fria. Efeito relaxante, tonificante, anti-inflamatório e ativador da circulação sanguínea.',
+        'item_duche_subaquatico'       => 'Hidromassagem manual em banheira, realizada a jacto e direccionada a uma determinada região ou articulação do corpo. Proporciona um efeito relaxante e activa localmente a circulação.',
+        'item_hidromassagem_banheira'  => 'Realizada em banheira com água do mar (36º-38ºC), o cliente é submetido a uma massagem alternada dos membros inferiores, coluna, bacia       e região escapular, através de finos jatos de água sob pressão, associada à emulsão de bolhas de ar. Efeitos: descontração muscular, tonificação dos tecidos, penetração dos oligoelementos, vasodilatação.',
+        'item_hidromassagem_banheira_cura' => 'Realizada em banheira com água do mar (36º-38ºC), o cliente é submetido a uma massagem alternada dos membros inferiores, coluna, bacia       e região escapular, através de finos jatos de água sob pressão, associada à emulsão de bolhas de ar. Efeitos: descontração muscular, tonificação dos tecidos, penetração dos oligoelementos, vasodilatação.',
+        'item_hidromassagem_algas'     => 'Banho de imersão em água do mar quente a que se adiciona algas microfragmentadas (em pó) e que, através de jatos dirigidos sequencialmente a diferentes partes do corpo, favorece a circulação sanguinea, relaxa os músculos, remineraliza os tecidos e hidrata a pele.',
+        'item_hidromassagem_algas_cura' => 'Banho de imersão em água do mar quente a que se adiciona algas microfragmentadas (em pó) e que, através de jatos dirigidos sequencialmente a diferentes partes do corpo, favorece a circulação sanguinea, relaxa os músculos, remineraliza os tecidos e hidrata a pele.',
+        'item_hidrocinesio_individual_60' => 'Piscina dinâmica com água do mar aquecida, contra-corrente, corredor pedonal, Banho Turco, duches de contraste, fonte de gelo e relaxamento.',
     ],
 
     /* --- Linhas de serviço (nome, duração, descrição) --- */

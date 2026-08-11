@@ -49,16 +49,16 @@ return [
 
     /* --- Vorteile (Tooltips für technische Dienstleistungen) --- */
     'tips' => [
-        'item_thalaxion'               => 'Regt die Blutzirkulation an und löst Muskelverspannungen durch Druckwasserstrahlen.',
-        'item_thalaxion_cura'          => 'Regt die Blutzirkulation an und löst Muskelverspannungen durch Druckwasserstrahlen.',
-        'item_phlebotone'              => 'Behandlung für müde Beine und schlechte Durchblutung mit straffender und entwässernder Wirkung.',
-        'item_phlebotone_cura'         => 'Behandlung für müde Beine und schlechte Durchblutung mit straffender und entwässernder Wirkung.',
-        'item_duche_subaquatico'       => 'Massage mit warmen Wasserstrahlen direkt auf den Körper, ideal bei Muskelschmerzen.',
-        'item_hidromassagem_banheira'  => 'Tiefenentspannung in einem Einzel-Whirlpool, der Muskelverspannungen löst und Stress abbaut.',
-        'item_hidromassagem_banheira_cura' => 'Tiefenentspannung in einem Einzel-Whirlpool, der Muskelverspannungen löst und Stress abbaut.',
-        'item_hidromassagem_algas'     => 'Verbindet die entspannende Wirkung der Strahlen mit den remineralisierenden Eigenschaften der Meeresalgen.',
-        'item_hidromassagem_algas_cura' => 'Verbindet die entspannende Wirkung der Strahlen mit den remineralisierenden Eigenschaften der Meeresalgen.',
-        'item_hidrocinesio_individual_60' => 'Therapie in einem Thermalwasserbecken, die die Bewegung erleichtert und die Muskeln stärkt – nützlich in der Rehabilitation.',
+        'item_thalaxion'               => 'Teilweise abgedeckte Wanne, in der Wasserstrahlen nacheinander auf Bauch, Oberschenkel und Beine gerichtet werden, mit wechselndem Druck und wechselnder Temperatur. Wirkung: aktiviert die venöse Blutzirkulation, venolymphatische Drainage und wirkt gegen Schwellungen.',
+        'item_thalaxion_cura'          => 'Teilweise abgedeckte Wanne, in der Wasserstrahlen nacheinander auf Bauch, Oberschenkel und Beine gerichtet werden, mit wechselndem Druck und wechselnder Temperatur. Wirkung: aktiviert die venöse Blutzirkulation, venolymphatische Drainage und wirkt gegen Schwellungen.',
+        'item_phlebotone'              => 'Wanne zum Eintauchen von Füßen und Beinen in ein einfaches Bad oder mit Luftblasen, abwechselnd in warmem und kaltem Meerwasser. Entspannende, tonisierende und entzündungshemmende Wirkung, aktiviert die Blutzirkulation.',
+        'item_phlebotone_cura'         => 'Wanne zum Eintauchen von Füßen und Beinen in ein einfaches Bad oder mit Luftblasen, abwechselnd in warmem und kaltem Meerwasser. Entspannende, tonisierende und entzündungshemmende Wirkung, aktiviert die Blutzirkulation.',
+        'item_duche_subaquatico'       => 'Manuelle Hydromassage in der Wanne, als Strahl ausgeführt und auf eine bestimmte Körperregion oder ein Gelenk gerichtet. Wirkt entspannend und aktiviert lokal die Durchblutung.',
+        'item_hidromassagem_banheira'  => 'In einer Wanne mit Meerwasser (36–38 ºC) erhält der Gast eine abwechselnde Massage der unteren Gliedmaßen, der Wirbelsäule, des Beckens und des Schulterbereichs durch feine Druckwasserstrahlen, verbunden mit einem Luftblasen-Emulsionsbad. Wirkungen: Muskelentspannung, Gewebestraffung, Eindringen von Spurenelementen, Gefäßerweiterung.',
+        'item_hidromassagem_banheira_cura' => 'In einer Wanne mit Meerwasser (36–38 ºC) erhält der Gast eine abwechselnde Massage der unteren Gliedmaßen, der Wirbelsäule, des Beckens und des Schulterbereichs durch feine Druckwasserstrahlen, verbunden mit einem Luftblasen-Emulsionsbad. Wirkungen: Muskelentspannung, Gewebestraffung, Eindringen von Spurenelementen, Gefäßerweiterung.',
+        'item_hidromassagem_algas'     => 'Tauchbad in warmem Meerwasser mit zugesetzten mikrofragmentierten Algen (in Pulverform), das durch nacheinander auf verschiedene Körperteile gerichtete Strahlen die Blutzirkulation fördert, die Muskeln entspannt, die Gewebe remineralisiert und die Haut mit Feuchtigkeit versorgt.',
+        'item_hidromassagem_algas_cura' => 'Tauchbad in warmem Meerwasser mit zugesetzten mikrofragmentierten Algen (in Pulverform), das durch nacheinander auf verschiedene Körperteile gerichtete Strahlen die Blutzirkulation fördert, die Muskeln entspannt, die Gewebe remineralisiert und die Haut mit Feuchtigkeit versorgt.',
+        'item_hidrocinesio_individual_60' => 'Dynamisches Becken mit erwärmtem Meerwasser, Gegenstrom, Gehstrecke, türkisches Bad, Kontrastduschen, Eisbrunnen und Entspannung.',
     ],
 
     /* --- Servicezeilen (Name, Dauer, Beschreibung) --- */
