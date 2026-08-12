@@ -251,6 +251,15 @@ function renderPanel(array $panel, array $t): void
     <!-- Relative asset URLs resolve from the app root, even under /en/ -->
     <base href="<?= e($basePath) ?>/">
 
+    <!-- Google Analytics 4 (change the ID here if needed) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JHFN694RWX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-JHFN694RWX');
+    </script>
+
     <!-- CSS VENDOR -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
