@@ -24,6 +24,8 @@ return [
         'back_to_top'       => 'Volver arriba',
         'duration_title'    => 'Duración aproximada: %d minutos',
         'buy_button'        => 'Comprar',
+        'theme_to_dark'     => 'Cambiar a modo noche',
+        'theme_to_light'    => 'Cambiar a modo día',
     ],
 
     /* --- Títulos de sección (bandas grises) --- */

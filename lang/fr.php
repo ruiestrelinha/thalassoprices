@@ -24,6 +24,8 @@ return [
         'back_to_top'       => 'Retour en haut',
         'duration_title'    => 'Durée approximative : %d minutes',
         'buy_button'        => 'Acheter',
+        'theme_to_dark'     => 'Passer en mode nuit',
+        'theme_to_light'    => 'Passer en mode jour',
     ],
 
     /* --- Titres de section (bandeaux gris) --- */

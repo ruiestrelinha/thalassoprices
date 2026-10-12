@@ -24,6 +24,8 @@ return [
         'back_to_top'       => 'Back to top',
         'duration_title'    => 'Approximate duration: %d minutes',
         'buy_button'        => 'Buy',
+        'theme_to_dark'     => 'Switch to dark mode',
+        'theme_to_light'    => 'Switch to light mode',
     ],
 
     /* --- Section titles (grey bands) --- */

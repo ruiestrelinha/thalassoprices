@@ -24,6 +24,8 @@ return [
         'back_to_top'       => 'Voltar ao topo',
         'duration_title'    => 'Duração aproximada: %d minutos',
         'buy_button'        => 'Comprar',
+        'theme_to_dark'     => 'Mudar para modo noite',
+        'theme_to_light'    => 'Mudar para modo dia',
     ],
 
     /* --- Títulos de secção (bandas cinzentas) --- */

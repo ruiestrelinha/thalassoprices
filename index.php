@@ -247,15 +247,46 @@ function renderPanel(array $panel, array $t): void
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#ffffff">
 
     <!-- Relative asset URLs resolve from the app root, even under /en/ -->
     <base href="<?= e($basePath) ?>/">
+
+    <!-- Day/night theme — resolved before the CSS loads to avoid a flash of the
+         wrong theme. Mirrors the logic in assets/js/main.js (same storage key). -->
+    <script>
+        (function() {
+            var root = document.documentElement;
+            var theme = "light";
+            try {
+                var stored = localStorage.getItem("thalasso-theme");
+                if (stored === "light" || stored === "dark") {
+                    theme = stored;
+                } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+                    theme = "dark";
+                }
+            } catch (e) {
+                /* localStorage unavailable — keep the light default */
+            }
+
+            root.setAttribute("data-theme", theme);
+
+            var meta = document.querySelector('meta[name="theme-color"]');
+            if (meta) {
+                meta.setAttribute("content", theme === "dark" ? "#0d1b24" : "#ffffff");
+            }
+        })();
+    </script>
 
     <!-- Google Analytics 4 (change the ID here if needed) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JHFN694RWX"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
         gtag('js', new Date());
         gtag('config', 'G-JHFN694RWX');
     </script>
@@ -265,7 +296,7 @@ function renderPanel(array $panel, array $t): void
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- CSS MAIN -->
-    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/main.css?v=20261012">
 
     <title><?= e($t['ui']['document_title']) ?></title>
 
@@ -281,22 +312,38 @@ function renderPanel(array $panel, array $t): void
     <header id="header">
 
         <div class="container text-center header-content">
-            <div class="dropdown language-selector">
-                <button class="language-selector__button" type="button" id="language-selector" data-bs-toggle="dropdown" aria-expanded="false" aria-label="<?= e($t['ui']['selector_aria']) ?>">
-                    <svg class="language-selector__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                        <circle cx="12" cy="12" r="8.5"></circle>
-                        <path d="M3.5 12h17M12 3.5c2.25 2.32 3.5 5.25 3.5 8.5S14.25 18.18 12 20.5c-2.25-2.32-3.5-5.25-3.5-8.5S9.75 5.82 12 3.5Z"></path>
+            <div class="header-tools">
+                <button class="theme-toggle" type="button" id="theme-toggle"
+                    aria-label="<?= e($t['ui']['theme_to_dark']) ?>"
+                    aria-pressed="false"
+                    title="<?= e($t['ui']['theme_to_dark']) ?>"
+                    data-label-to-dark="<?= e($t['ui']['theme_to_dark']) ?>"
+                    data-label-to-light="<?= e($t['ui']['theme_to_light']) ?>">
+                    <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                     </svg>
-                    <span class="language-selector__current"><?= e(strtoupper($lang)) ?></span>
-                    <span class="language-selector__chevron" aria-hidden="true"></span>
+                    <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <circle cx="12" cy="12" r="4"></circle>
+                        <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+                    </svg>
                 </button>
-                <ul class="dropdown-menu dropdown-menu-end language-selector__menu" aria-labelledby="language-selector">
-                    <li><a class="dropdown-item<?= $lang === 'pt' ? ' active' : '' ?>" href="<?= e(langUrl('pt')) ?>" lang="pt" <?= $lang === 'pt' ? ' aria-current="true"' : '' ?>>PT <span>Português</span></a></li>
-                    <li><a class="dropdown-item<?= $lang === 'en' ? ' active' : '' ?>" href="<?= e(langUrl('en')) ?>" lang="en" <?= $lang === 'en' ? ' aria-current="true"' : '' ?>>EN <span>English</span></a></li>
-                    <li><a class="dropdown-item<?= $lang === 'fr' ? ' active' : '' ?>" href="<?= e(langUrl('fr')) ?>" lang="fr" <?= $lang === 'fr' ? ' aria-current="true"' : '' ?>>FR <span>Français</span></a></li>
-                    <li><a class="dropdown-item<?= $lang === 'es' ? ' active' : '' ?>" href="<?= e(langUrl('es')) ?>" lang="es" <?= $lang === 'es' ? ' aria-current="true"' : '' ?>>ES <span>Español</span></a></li>
-                    <li><a class="dropdown-item<?= $lang === 'de' ? ' active' : '' ?>" href="<?= e(langUrl('de')) ?>" lang="de" <?= $lang === 'de' ? ' aria-current="true"' : '' ?>>DE <span>Deutsch</span></a></li>
-                </ul>
+                <div class="dropdown language-selector">
+                    <button class="language-selector__button" type="button" id="language-selector" data-bs-toggle="dropdown" aria-expanded="false" aria-label="<?= e($t['ui']['selector_aria']) ?>">
+                        <svg class="language-selector__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <circle cx="12" cy="12" r="8.5"></circle>
+                            <path d="M3.5 12h17M12 3.5c2.25 2.32 3.5 5.25 3.5 8.5S14.25 18.18 12 20.5c-2.25-2.32-3.5-5.25-3.5-8.5S9.75 5.82 12 3.5Z"></path>
+                        </svg>
+                        <span class="language-selector__current"><?= e(strtoupper($lang)) ?></span>
+                        <span class="language-selector__chevron" aria-hidden="true"></span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end language-selector__menu" aria-labelledby="language-selector">
+                        <li><a class="dropdown-item<?= $lang === 'pt' ? ' active' : '' ?>" href="<?= e(langUrl('pt')) ?>" lang="pt" <?= $lang === 'pt' ? ' aria-current="true"' : '' ?>>PT <span>Português</span></a></li>
+                        <li><a class="dropdown-item<?= $lang === 'en' ? ' active' : '' ?>" href="<?= e(langUrl('en')) ?>" lang="en" <?= $lang === 'en' ? ' aria-current="true"' : '' ?>>EN <span>English</span></a></li>
+                        <li><a class="dropdown-item<?= $lang === 'fr' ? ' active' : '' ?>" href="<?= e(langUrl('fr')) ?>" lang="fr" <?= $lang === 'fr' ? ' aria-current="true"' : '' ?>>FR <span>Français</span></a></li>
+                        <li><a class="dropdown-item<?= $lang === 'es' ? ' active' : '' ?>" href="<?= e(langUrl('es')) ?>" lang="es" <?= $lang === 'es' ? ' aria-current="true"' : '' ?>>ES <span>Español</span></a></li>
+                        <li><a class="dropdown-item<?= $lang === 'de' ? ' active' : '' ?>" href="<?= e(langUrl('de')) ?>" lang="de" <?= $lang === 'de' ? ' aria-current="true"' : '' ?>>DE <span>Deutsch</span></a></li>
+                    </ul>
+                </div>
             </div>
             <div id="logo">
                 <img src="assets/images/thalasso_logo.png" alt="<?= e($t['ui']['logo_alt']) ?>" class="img-fluid">
@@ -377,7 +424,7 @@ function renderPanel(array $panel, array $t): void
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 
     <!-- JS MAIN -->
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/main.js?v=20261012"></script>
 
 </body>
 

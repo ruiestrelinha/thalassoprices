@@ -24,6 +24,8 @@ return [
         'back_to_top'       => 'Nach oben',
         'duration_title'    => 'Ungefähre Dauer: %d Minuten',
         'buy_button'        => 'Kaufen',
+        'theme_to_dark'     => 'Zum Nachtmodus wechseln',
+        'theme_to_light'    => 'Zum Tagmodus wechseln',
     ],
 
     /* --- Abschnittstitel (graue Bänder) --- */

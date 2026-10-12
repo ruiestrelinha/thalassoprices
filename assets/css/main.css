@@ -2,17 +2,142 @@
  # General
  --------------------------------------------------------------------------------*/
 :root {
+  /* Brand palette */
   --thalasso-verdigris: #18a999;
   --thalasso-gray-dark: #2e2e2e;
   --thalasso-gray-mid: #4a4a4a;
   --thalasso-gray-light: #666666;
   --thalasso-gray-band: #5a5a5a;
   --thalasso-line: #b8b8b8;
+
+  color-scheme: light;
+
+  /* Semantic theme tokens — DAY (light).
+     These values reproduce the original design exactly. */
+  --bg-page: #ffffff;
+  --bg-surface: #ffffff;
+  --bg-surface-alt: #e6f5f3;
+  --text-primary: var(--thalasso-gray-dark);
+  --text-secondary: var(--thalasso-gray-mid);
+  --text-muted: var(--thalasso-gray-light);
+  --heading: var(--thalasso-gray-mid);
+  --price: var(--thalasso-gray-mid);
+  --accent: var(--thalasso-verdigris);
+  --accent-strong: #0f8a7d;
+  --accent-hover: #12897c;
+  --accent-border: rgba(24, 169, 153, 0.35);
+  --on-accent: #ffffff;
+  --border: var(--thalasso-line);
+  --border-strong: var(--thalasso-gray-light);
+  --section-band-bg: var(--thalasso-gray-band);
+  --section-band-text: #ffffff;
+  --footer-bg: var(--thalasso-gray-band);
+  --footer-text: #ffffff;
+  --footer-link: #ffffff;
+  --footer-link-hover: #ffffff;
+  --btn-bg: var(--thalasso-verdigris);
+  --btn-bg-hover: #12897c;
+  --btn-shadow: rgba(24, 169, 153, 0.3);
+  --tooltip-bg: var(--thalasso-gray-dark);
+  --tooltip-text: #ffffff;
+  --focus-ring: rgba(24, 169, 153, 0.35);
+  --focus-ring-soft: rgba(24, 169, 153, 0.25);
+  --focus-ring-tip: rgba(24, 169, 153, 0.4);
+  --focus-ring-strong: #0b5047;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --shadow-button: rgba(46, 46, 46, 0.2);
+  --logo-filter: none;
+  --theme-color: #ffffff;
+}
+
+/* Semantic theme tokens — NIGHT (dark).
+   "Spa at night by the sea": deep petrol/marine blues, no pure black. */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg-page: #0d1b24;
+  --bg-surface: #16303a;
+  --bg-surface-alt: #1b3945;
+  --text-primary: #e8eef1;
+  --text-secondary: #c2d0d6;
+  --text-muted: #96a9b3;
+  --heading: #f0f5f7;
+  --price: #5fd3c4;
+  --accent: #4cc8b8;
+  --accent-strong: #1f9a8b;
+  --accent-hover: #5fd3c4;
+  --accent-border: rgba(95, 211, 196, 0.35);
+  --on-accent: #06231f;
+  --border: #2c414c;
+  --border-strong: #4a6b78;
+  --section-band-bg: #17313c;
+  --section-band-text: #eaf3f5;
+  --footer-bg: #0a151c;
+  --footer-text: #dbe6ea;
+  --footer-link: #8fd9cf;
+  --footer-link-hover: #b3e8e0;
+  --btn-bg: #2fae9e;
+  --btn-bg-hover: #3fc4b3;
+  --btn-shadow: rgba(0, 0, 0, 0.45);
+  --tooltip-bg: #1d3a45;
+  --tooltip-text: #eaf3f5;
+  --focus-ring: rgba(95, 211, 196, 0.6);
+  --focus-ring-soft: rgba(95, 211, 196, 0.5);
+  --focus-ring-tip: rgba(95, 211, 196, 0.55);
+  --focus-ring-strong: #7fe0d2;
+  --shadow: rgba(0, 0, 0, 0.5);
+  --shadow-button: rgba(0, 0, 0, 0.5);
+  --logo-filter: invert(1) hue-rotate(180deg);
+  --theme-color: #0d1b24;
+}
+
+/* No-JS fallback: honour the device/system theme even if the inline <head>
+   script never runs. With JS enabled, data-theme is always set, so this
+   selector (`:not([data-theme])`) never matches and the toggled value wins. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    color-scheme: dark;
+
+    --bg-page: #0d1b24;
+    --bg-surface: #16303a;
+    --bg-surface-alt: #1b3945;
+    --text-primary: #e8eef1;
+    --text-secondary: #c2d0d6;
+    --text-muted: #96a9b3;
+    --heading: #f0f5f7;
+    --price: #5fd3c4;
+    --accent: #4cc8b8;
+    --accent-strong: #1f9a8b;
+    --accent-hover: #5fd3c4;
+    --accent-border: rgba(95, 211, 196, 0.35);
+    --on-accent: #06231f;
+    --border: #2c414c;
+    --border-strong: #4a6b78;
+    --section-band-bg: #17313c;
+    --section-band-text: #eaf3f5;
+    --footer-bg: #0a151c;
+    --footer-text: #dbe6ea;
+    --footer-link: #8fd9cf;
+    --footer-link-hover: #b3e8e0;
+    --btn-bg: #2fae9e;
+    --btn-bg-hover: #3fc4b3;
+    --btn-shadow: rgba(0, 0, 0, 0.45);
+    --tooltip-bg: #1d3a45;
+    --tooltip-text: #eaf3f5;
+    --focus-ring: rgba(95, 211, 196, 0.6);
+    --focus-ring-soft: rgba(95, 211, 196, 0.5);
+    --focus-ring-tip: rgba(95, 211, 196, 0.55);
+    --focus-ring-strong: #7fe0d2;
+    --shadow: rgba(0, 0, 0, 0.5);
+    --shadow-button: rgba(0, 0, 0, 0.5);
+    --logo-filter: invert(1) hue-rotate(180deg);
+    --theme-color: #0d1b24;
+  }
 }
 
 body {
-  background: #ffffff;
-  color: var(--thalasso-gray-dark);
+  background: var(--bg-page);
+  color: var(--text-primary);
   font-family: "Quicksand", sans-serif;
   font-size: 18px;
   line-height: 1.5;
@@ -29,16 +154,74 @@ body {
   position: relative;
 }
 
+/* Theme toggle + language selector, pinned to the top-right corner */
+.header-tools {
+  align-items: center;
+  display: flex;
+  gap: 0.35rem;
+  position: absolute;
+  right: 0.15rem;
+  top: -1.3rem;
+}
+
+.theme-toggle {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  border-radius: 50%;
+  color: var(--text-secondary);
+  cursor: pointer;
+  display: inline-flex;
+  flex-shrink: 0;
+  height: 2rem;
+  justify-content: center;
+  padding: 0;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  width: 2rem;
+}
+
+.theme-toggle:hover {
+  background: var(--bg-surface-alt);
+  color: var(--accent);
+}
+
+.theme-toggle:focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+.theme-toggle__icon {
+  fill: none;
+  height: 1.15rem;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.6;
+  width: 1.15rem;
+}
+
+/* Show the icon of the mode the button switches to:
+   day → moon, night → sun. */
+.theme-toggle__icon--sun {
+  display: none;
+}
+
+:root[data-theme="dark"] .theme-toggle__icon--moon {
+  display: none;
+}
+
+:root[data-theme="dark"] .theme-toggle__icon--sun {
+  display: inline;
+}
+
 #header #logo {
   max-width: 220px;
   width: 100%;
   display: inline-block;
 }
 
-.language-selector {
-  position: absolute;
-  right: 0.15rem;
-  top: -1.3rem;
+#header #logo img {
+  filter: var(--logo-filter);
 }
 
 .language-selector__button {
@@ -46,7 +229,7 @@ body {
   background: transparent;
   border: 0;
   border-radius: 0.25rem;
-  color: var(--thalasso-gray-mid);
+  color: var(--text-secondary);
   display: inline-flex;
   font-family: inherit;
   font-size: 0.85rem;
@@ -58,11 +241,11 @@ body {
 
 .language-selector__button:hover,
 .language-selector__button:focus-visible {
-  color: var(--thalasso-verdigris);
+  color: var(--accent);
 }
 
 .language-selector__button:focus-visible {
-  outline: 3px solid rgba(24, 169, 153, 0.25);
+  outline: 3px solid var(--focus-ring-soft);
   outline-offset: 2px;
 }
 
@@ -92,9 +275,11 @@ body {
 }
 
 .language-selector__menu {
-  border: 1px solid var(--thalasso-line);
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border);
   border-radius: 0.5rem;
-  box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.5rem 1.25rem var(--shadow);
+  color: var(--text-secondary);
   font-family: inherit;
   min-width: 9.5rem;
   overflow: hidden;
@@ -103,14 +288,14 @@ body {
 
 .language-selector__menu .dropdown-item {
   border-radius: 0.3rem;
-  color: var(--thalasso-gray-mid);
+  color: var(--text-secondary);
   font-size: 0.85rem;
   font-weight: 700;
   padding: 0.5rem 0.65rem;
 }
 
 .language-selector__menu .dropdown-item span {
-  color: var(--thalasso-gray-light);
+  color: var(--text-muted);
   font-size: 0.8rem;
   font-weight: 500;
   margin-left: 0.35rem;
@@ -119,8 +304,8 @@ body {
 .language-selector__menu .dropdown-item:hover,
 .language-selector__menu .dropdown-item:focus,
 .language-selector__menu .dropdown-item.active {
-  background: #e6f5f3;
-  color: var(--thalasso-verdigris);
+  background: var(--bg-surface-alt);
+  color: var(--accent);
 }
 
 
@@ -128,7 +313,7 @@ body {
  # Main Section
  --------------------------------------------------------------------------------*/
 .page-title {
-  color: var(--thalasso-gray-mid);
+  color: var(--heading);
   font-size: 1.6rem;
   font-weight: 600;
   margin: 1.5rem 0 1.25rem;
@@ -145,8 +330,8 @@ body {
 }
 
 .price-toggle {
-  background: #ffffff;
-  border: 1px solid var(--thalasso-gray-light);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-strong);
   border-radius: 999px;
   display: inline-flex;
   overflow: hidden;
@@ -156,7 +341,7 @@ body {
   background: transparent;
   border: 0;
   border-radius: 999px;
-  color: var(--thalasso-gray-mid);
+  color: var(--text-secondary);
   cursor: pointer;
   font-family: inherit;
   font-size: 1rem;
@@ -166,14 +351,14 @@ body {
 }
 
 .price-toggle button.active {
-  background-color: var(--thalasso-verdigris);
-  color: #ffffff;
+  background-color: var(--btn-bg);
+  color: var(--on-accent);
   font-weight: bold;
   font-size: 1.2rem;
 }
 
 .price-toggle button:focus-visible {
-  outline: 3px solid #0b5047;
+  outline: 3px solid var(--focus-ring-strong);
   outline-offset: 2px;
 }
 
@@ -186,7 +371,7 @@ body {
 }
 
 .price-tax-note {
-  color: var(--thalasso-gray-light);
+  color: var(--text-muted);
   font-size: 1rem;
   margin-bottom: 0.75rem;
   text-align: center;
@@ -194,7 +379,7 @@ body {
 
 .price-row {
   align-items: start;
-  border-top: 1px solid var(--thalasso-line);
+  border-top: 1px solid var(--border);
   display: grid;
   gap: 0.75rem;
   grid-template-columns: minmax(0, 1fr) auto;
@@ -202,11 +387,11 @@ body {
 }
 
 .price-row:last-of-type {
-  border-bottom: 1px solid var(--thalasso-line);
+  border-bottom: 1px solid var(--border);
 }
 
 .item-name {
-  color: var(--thalasso-gray-mid);
+  color: var(--heading);
   font-size: 1.2rem;
   font-weight: 600;
   line-height: 1.35;
@@ -214,7 +399,7 @@ body {
 }
 
 .item-duration {
-  color: var(--thalasso-gray-light);
+  color: var(--text-muted);
   font-size: 0.95rem;
   font-weight: 600;
   margin-bottom: 0.3rem;
@@ -227,13 +412,13 @@ body {
 }
 
 .item-desc {
-  color: var(--thalasso-gray-light);
+  color: var(--text-muted);
   font-size: 1rem;
   line-height: 1.5;
 }
 
 .item-price {
-  color: var(--thalasso-gray-mid);
+  color: var(--price);
   font-size: 1.35rem;
   font-weight: 600;
   padding-top: 0;
@@ -242,8 +427,8 @@ body {
 }
 
 .section-band {
-  background-color: var(--thalasso-gray-band);
-  color: #ffffff;
+  background-color: var(--section-band-bg);
+  color: var(--section-band-text);
   font-size: 1.05rem;
   font-weight: 700;
   letter-spacing: 0.03em;
@@ -259,7 +444,7 @@ body {
 }
 
 .section-desc {
-  color: var(--thalasso-gray-light);
+  color: var(--text-muted);
   font-size: 1rem;
   margin: 0.5rem 0;
 }
@@ -269,10 +454,10 @@ body {
  --------------------------------------------------------------------------------*/
 .vat-legend {
   align-items: flex-start;
-  background: #e6f5f3;
-  border: 1px solid rgba(24, 169, 153, 0.35);
+  background: var(--bg-surface-alt);
+  border: 1px solid var(--accent-border);
   border-radius: 0.5rem;
-  color: var(--thalasso-gray-mid);
+  color: var(--text-secondary);
   display: flex;
   gap: 0.6rem;
   line-height: 1.5;
@@ -291,7 +476,7 @@ body {
   flex-shrink: 0;
   height: 1.15rem;
   margin-top: 0.1rem;
-  stroke: var(--thalasso-verdigris);
+  stroke: var(--accent);
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-width: 1.6;
@@ -303,12 +488,11 @@ body {
  --------------------------------------------------------------------------------*/
 .buy-button {
   align-items: center;
-  background-color: #18a999;
-  background-color: var(--thalasso-verdigris, #18a999);
-  border: 1px solid #0f8a7d;
+  background-color: var(--btn-bg);
+  border: 1px solid var(--accent-strong);
   border-radius: 999px;
-  box-shadow: 0 0.2rem 0.45rem rgba(24, 169, 153, 0.3);
-  color: #ffffff;
+  box-shadow: 0 0.2rem 0.45rem var(--btn-shadow);
+  color: var(--on-accent);
   display: inline-flex;
   font-family: inherit;
   font-size: 0.9rem;
@@ -322,14 +506,14 @@ body {
 }
 
 .buy-button:hover {
-  background-color: #12897c;
-  color: #ffffff;
+  background-color: var(--btn-bg-hover);
+  color: var(--on-accent);
   text-decoration: none;
   transform: translateY(-1px);
 }
 
 .buy-button:focus-visible {
-  outline: 3px solid rgba(24, 169, 153, 0.35);
+  outline: 3px solid var(--focus-ring);
   outline-offset: 2px;
 }
 
@@ -362,7 +546,7 @@ body {
 }
 
 .service-tip:focus-visible {
-  outline: 2px solid rgba(24, 169, 153, 0.4);
+  outline: 2px solid var(--focus-ring-tip);
   outline-offset: 2px;
   border-radius: 50%;
 }
@@ -371,7 +555,7 @@ body {
 .service-tip__icon {
   fill: none;
   height: 1.05rem;
-  stroke: var(--thalasso-verdigris);
+  stroke: var(--accent);
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-width: 1.6;
@@ -380,10 +564,10 @@ body {
 }
 
 .service-tip__bubble {
-  background: var(--thalasso-gray-dark);
+  background: var(--tooltip-bg);
   border-radius: 0.4rem;
   bottom: calc(100% + 0.55rem);
-  color: #ffffff;
+  color: var(--tooltip-text);
   font-size: 0.85rem;
   font-weight: 500;
   left: 50%;
@@ -401,7 +585,7 @@ body {
 
 .service-tip__bubble::after {
   border: 6px solid transparent;
-  border-top-color: var(--thalasso-gray-dark);
+  border-top-color: var(--tooltip-bg);
   content: "";
   left: 50%;
   position: absolute;
@@ -441,8 +625,8 @@ body {
  # Footer Section
  --------------------------------------------------------------------------------*/
 #footer {
-  background-color: var(--thalasso-gray-band);
-  color: #ffffff;
+  background-color: var(--footer-bg);
+  color: var(--footer-text);
   margin-top: 2rem;
   padding: 2rem 1rem;
   text-align: center;
@@ -459,12 +643,13 @@ body {
 }
 
 #footer a {
-  color: #ffffff;
+  color: var(--footer-link);
   text-decoration: underline;
   text-underline-offset: 0.15em;
 }
 
 #footer a:hover {
+  color: var(--footer-link-hover);
   text-decoration: underline;
 }
 
@@ -490,12 +675,12 @@ body {
  --------------------------------------------------------------------------------*/
 .back-to-top {
   align-items: center;
-  background: var(--thalasso-verdigris);
+  background: var(--accent);
   border: 0;
   border-radius: 50%;
   bottom: 1.25rem;
-  box-shadow: 0 0.35rem 0.9rem rgba(46, 46, 46, 0.2);
-  color: #ffffff;
+  box-shadow: 0 0.35rem 0.9rem var(--shadow-button);
+  color: var(--on-accent);
   display: flex;
   height: 2.8rem;
   justify-content: center;
@@ -517,11 +702,11 @@ body {
 }
 
 .back-to-top:hover {
-  background: #12897c;
+  background: var(--accent-hover);
 }
 
 .back-to-top:focus-visible {
-  outline: 3px solid rgba(24, 169, 153, 0.35);
+  outline: 3px solid var(--focus-ring);
   outline-offset: 3px;
 }
 
@@ -539,6 +724,53 @@ body {
   .back-to-top {
     bottom: calc(1rem + env(safe-area-inset-bottom));
     right: 1rem;
+  }
+}
+
+/*--------------------------------------------------------------------------------
+ # Theme transition
+ # Only enabled after the first paint (html.theme-ready, set by main.js) so the
+ # initial render never animates, and disabled for reduced-motion users.
+ --------------------------------------------------------------------------------*/
+@media (prefers-reduced-motion: no-preference) {
+  html.theme-ready body,
+  html.theme-ready #header,
+  html.theme-ready #logo img,
+  html.theme-ready .language-selector__button,
+  html.theme-ready .language-selector__menu,
+  html.theme-ready .language-selector__menu .dropdown-item,
+  html.theme-ready .page-title,
+  html.theme-ready .price-toggle,
+  html.theme-ready .price-toggle button,
+  html.theme-ready .price-tax-note,
+  html.theme-ready .price-row,
+  html.theme-ready .item-name,
+  html.theme-ready .item-duration,
+  html.theme-ready .item-desc,
+  html.theme-ready .item-price,
+  html.theme-ready .section-band,
+  html.theme-ready .section-desc,
+  html.theme-ready .vat-legend,
+  html.theme-ready .vat-legend__icon,
+  html.theme-ready .service-tip__icon {
+    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+  }
+
+  html.theme-ready #logo img {
+    transition: filter 0.25s ease;
+  }
+
+  /* Keep the pre-existing motion of these components while adding the theme fade */
+  html.theme-ready .buy-button {
+    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, transform 0.2s ease;
+  }
+
+  html.theme-ready .service-tip__bubble {
+    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, opacity 0.18s ease, transform 0.18s ease;
+  }
+
+  html.theme-ready .back-to-top {
+    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, opacity 0.2s ease, transform 0.2s ease;
   }
 }
 
@@ -634,6 +866,79 @@ body {
 
   .price-tax-note {
     text-align: right;
+  }
+}
+
+/*--------------------------------------------------------------------------------
+ # Mobile - ensure the toggle keeps a comfortable 44x44px touch target
+ --------------------------------------------------------------------------------*/
+@media (max-width: 767.98px) {
+  .theme-toggle {
+    height: 2.75rem;
+    width: 2.75rem;
+  }
+}
+
+/*--------------------------------------------------------------------------------
+ # Print - always the light theme, regardless of the active mode
+ --------------------------------------------------------------------------------*/
+@media print {
+  :root,
+  :root[data-theme="dark"] {
+    color-scheme: light;
+
+    --bg-page: #ffffff;
+    --bg-surface: #ffffff;
+    --bg-surface-alt: #f2f2f2;
+    --text-primary: #000000;
+    --text-secondary: #222222;
+    --text-muted: #444444;
+    --heading: #222222;
+    --price: #000000;
+    --accent: #0f7d70;
+    --accent-strong: #0f7d70;
+    --accent-hover: #0f7d70;
+    --accent-border: #cccccc;
+    --on-accent: #ffffff;
+    --border: #999999;
+    --border-strong: #999999;
+    --section-band-bg: #eeeeee;
+    --section-band-text: #111111;
+    --footer-bg: #f2f2f2;
+    --footer-text: #111111;
+    --footer-link: #0f7d70;
+    --footer-link-hover: #0f7d70;
+    --btn-bg: #0f7d70;
+    --btn-bg-hover: #0f7d70;
+    --btn-shadow: transparent;
+    --tooltip-bg: #eeeeee;
+    --tooltip-text: #111111;
+    --focus-ring: #000000;
+    --focus-ring-soft: #000000;
+    --focus-ring-tip: #000000;
+    --focus-ring-strong: #000000;
+    --shadow: transparent;
+    --shadow-button: transparent;
+    --logo-filter: none;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  /* Keep the intended colours of these components when printing */
+  .buy-button,
+  .price-toggle button.active,
+  .section-band,
+  #footer {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .theme-toggle,
+  .back-to-top {
+    display: none !important;
   }
 }
 
